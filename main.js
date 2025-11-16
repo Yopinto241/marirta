@@ -31,6 +31,83 @@ const btnEn = document.getElementById('btnEn');
 const btnSwM = document.getElementById('btnSwM');
 const btnEnM = document.getElementById('btnEnM');
 
+// Translations for static UI strings (Swahili/English)
+const I18N = {
+  sw: {
+    'nav.home': 'Nyumbani',
+    'nav.about': 'Kuhusu Mbunge',
+    'nav.projects': 'Miradi',
+    'nav.news': 'Habari',
+    'nav.gallery': 'Picha & Video',
+    'nav.ilani': 'Ilani',
+    'nav.contact': 'Wasiliana',
+    'site.title': 'Ofisi ya Mbunge Marirta Gido',
+    'home.tagline': 'Kuwawezesha wanawake na vijana kupitia elimu, afya, na fursa za ajira.',
+    'home.latestNews': 'Habari Mpya',
+    'home.viewAll': 'Tazama Zote',
+    'home.featuredProjects': 'Miradi Iliyoangaziwa',
+    'home.ctaProjects': 'Tazama Miradi',
+    'home.ctaContact': 'Wasiliana Nasi',
+    'home.ctaIlani': 'Soma Ilani',
+    'trust.transparency': 'Uwazi',
+    'trust.participation': 'Ushirikishwaji',
+    'trust.accountability': 'Uwajibikaji',
+    'testimonials.title': 'Ushuhuda wa Wananchi',
+    'media.title': 'Picha & Video',
+    'featuredPhotos.title': 'Picha Zilizochaguliwa',
+    'map.title': 'Ramani na Maelekezo',
+    'map.open': 'Fungua kwenye Google Maps',
+    'social.title': 'Mitandao ya Kijamii',
+    'footer.links': 'Viungo',
+    'footer.contact': 'Mawasiliano',
+    'footer.newsletter': 'Jarida',
+    'footer.blurb': 'Tovuti rasmi kwa taarifa, miradi na mawasiliano ya Ofisi ya Mbunge Mteule (Viti Maalumu) – Mkoa wa Arusha.',
+    'footer.backTop': 'Rudi juu ↑'
+  },
+  en: {
+    'nav.home': 'Home',
+    'nav.about': 'About the MP',
+    'nav.projects': 'Projects',
+    'nav.news': 'News',
+    'nav.gallery': 'Photos & Video',
+    'nav.ilani': 'Manifesto',
+    'nav.contact': 'Contact',
+    'site.title': 'Office of MP Marirta Gido',
+    'home.tagline': 'Empowering women and youth through education, health, and jobs.',
+    'home.latestNews': 'Latest News',
+    'home.viewAll': 'View All',
+    'home.featuredProjects': 'Featured Projects',
+    'home.ctaProjects': 'See Projects',
+    'home.ctaContact': 'Contact Us',
+    'home.ctaIlani': 'Read Manifesto',
+    'trust.transparency': 'Transparency',
+    'trust.participation': 'Participation',
+    'trust.accountability': 'Accountability',
+    'testimonials.title': 'Testimonials',
+    'media.title': 'Photos & Video',
+    'featuredPhotos.title': 'Featured Photos',
+    'map.title': 'Map & Directions',
+    'map.open': 'Open in Google Maps',
+    'social.title': 'Social Media',
+    'footer.links': 'Links',
+    'footer.contact': 'Contact',
+    'footer.newsletter': 'Newsletter',
+    'footer.blurb': 'Official website for updates, projects and contacts of the MP’s office (Special Seats) – Arusha Region.',
+    'footer.backTop': 'Back to top ↑'
+  }
+};
+
+function applyI18n() {
+  const lang = document.documentElement.lang || 'sw';
+  const dict = I18N[lang] || {};
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key && dict[key]) {
+      el.textContent = dict[key];
+    }
+  });
+}
+
 function setLang(lang) {
   document.documentElement.lang = lang;
   // toggle active states
@@ -39,6 +116,7 @@ function setLang(lang) {
   localStorage.setItem('site-lang', lang);
   // re-render dynamic sections (news/projects) after lang change
   renderHome();
+  applyI18n();
 }
 [btnSw, btnSwM].forEach(b => b && b.addEventListener('click', () => setLang('sw')));
 [btnEn, btnEnM].forEach(b => b && b.addEventListener('click', () => setLang('en')));
@@ -408,6 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startAutoFlip();
   highlightActiveNav();
   setupHeaderScroll();
+  applyI18n();
 });
 
 // Auto flip all cards with .auto-flip every few seconds (singleton)
