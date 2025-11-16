@@ -1,0 +1,112 @@
+/* Base polish */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+:root { --accent: #0ea5e9; }
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 88px; }
+body { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+.nav-link { color:#334155; text-decoration: none; position:relative; padding-bottom:2px; }
+.nav-link:hover { color:var(--accent); }
+.nav-link::after {
+  content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background: var(--accent);
+  transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+.nav-link.active { color: var(--accent); font-weight:600; }
+
+/* Buttons (no @apply to keep CDN-compatible) */
+.btn-primary {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:0.5rem 1.25rem; border-radius:0.75rem;
+  background:#0284c7; color:#fff; font-weight:500;
+  box-shadow:0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+  transition: background-color .15s ease, box-shadow .2s ease, transform .2s ease;
+}
+.btn-primary:hover { background:#0369a1; }
+.btn-ghost {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:0.5rem 1.25rem; border-radius:0.75rem; border:1px solid #cbd5e1;
+  color:#1e293b; background:transparent; box-shadow:0 1px 2px rgba(0,0,0,.05);
+}
+.btn-ghost:hover { background:#ffffff; }
+.lang-btn { padding:0.25rem 0.75rem; font-size:0.875rem; }
+.lang-btn.active { background:#0f172a; color:#fff; }
+.lang-pill { padding:0.25rem 0.75rem; border-radius:9999px; border:1px solid #cbd5e1; font-size:0.875rem; background:transparent; }
+.lang-pill.active { background:#0f172a; color:#fff; }
+.mobile-link { display:block; padding:0.5rem 0.75rem; border-radius:0.5rem; }
+.mobile-link:hover { background:#f8fafc; }
+.footer-link { text-decoration:none; }
+.footer-link:hover { text-decoration:underline; }
+
+/* Hero decoration */
+.blob {
+  position:absolute; filter: blur(40px); opacity:.35; pointer-events:none;
+  width:360px; height:360px; border-radius:9999px;
+  animation: float 12s ease-in-out infinite;
+}
+.blob-1 { top:-60px; right:-60px; background: radial-gradient(circle at 30% 30%, #22d3ee, #93c5fd); }
+.blob-2 { bottom:-80px; left:-40px; background: radial-gradient(circle at 70% 70%, #86efac, #a7f3d0); animation-delay: -5s; }
+@keyframes float {
+  0%,100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(12px) scale(1.02); }
+}
+
+/* Animated card reveal */
+.reveal {
+  opacity:0; transform: translateY(16px) scale(.98);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in {
+  opacity:1; transform: translateY(0) scale(1);
+}
+
+/* Small accent */
+.dot { width:8px; height:8px; border-radius:9999px; background:#0ea5e9; display:inline-block; }
+
+/* Header glass + scroll effect */
+header.sticky { -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); background: rgba(255,255,255,.78); }
+header.sticky.scrolled { background: rgba(255,255,255,.92); box-shadow: 0 8px 24px rgba(14,165,233,.12); }
+
+/* Fade at bottom of text blocks */
+.fade-bottom {
+  position: relative;
+}
+.fade-bottom:after {
+  content: "";
+  position: absolute; left:0; right:0; bottom:0; height:42px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+/* Flip card rotator */
+.flip-card { perspective: 1000px; position: relative; }
+.flip-inner {
+  position: relative; width:100%; height:100%;
+  transform-style: preserve-3d; -webkit-transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+.flip-rotated .flip-inner { transform: rotateY(180deg); }
+.flip-face {
+  position:absolute; inset:0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+}
+.flip-back { transform: rotateY(180deg); }
+
+/* Hover-triggered flip (use on index only) */
+.flip-hover:hover .flip-inner { transform: rotateY(180deg); }
+
+/* Automatic flip state */
+.flip-card.flip-active .flip-inner { transform: rotateY(180deg); }
+
+/* Simple slider */
+.slider { position: relative; overflow: hidden; }
+.slider-track { display:flex; transition: transform .6s ease; }
+.slider-slide { min-width: 100%; user-select:none; }
+.slider-nav { position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; pointer-events:none; }
+.slider-btn { pointer-events:auto; background:rgba(0,0,0,.5); color:#fff; border-radius:9999px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; }
+
+/* Quick dropdown (desktop) */
+.menu-dropdown {
+  position:absolute; right:0; top:100%; margin-top:8px; z-index:60;
+  background:#fff; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,.08);
+  border:1px solid rgba(2,6,23,0.06); min-width:220px; overflow:hidden;
+}
+.menu-item { display:block; padding:10px 14px; color:#334155; text-decoration:none; }
+.menu-item:hover { background:#f8fafc; color:#0ea5e9; }

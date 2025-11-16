@@ -1,0 +1,41 @@
+          if (!txt) return '';
+          const items = txt.split(/\n/).filter(l=>/^\s*-\s+/.test(l)).map(l=>l.replace(/^\s*-\s+/,''));
+          if (!items.length) return '';
+          return `<ul class=\"space-y-1\">${items.map(it=>`<li class=\"flex items-start gap-2\"><span class=\"text-green-600 mt-1\">&#10003;</span><span class=\"text-gray-700\">${it}</span></li>`).join('')}</ul>`;
+        };
+        const renderProjects = (txt) => {
+          if (!txt) return '';
+          const listRe = /\{[\s\S]*?\}/g;
+          const rows = [];
+          let m;
+          while ((m = listRe.exec(txt)) !== null) {
+            const block = m[0];
+            const get = (k) => { const r = new RegExp("'"+k+"'\s*:\s*'([^']+)'",'m').exec(block); return r ? r[1] : ''; };
+            rows.push({ name: get('name'), sector: get('sector'), district: get('district') });
+          }
+          if (!rows.length) return '';
+          return `<div class=\"mt-4\"><div class=\"font-medium mb-2\">Miradi (muhtasari)</div><ul class=\"divide-y\">${rows.map(r=>`<li class=\"py-2\"><div class=\"font-medium\">${r.name}</div><div class=\"text-sm text-gray-500\">${r.sector} &mdash; ${r.district}</div></li>`).join('')}</ul></div>`;
+        };
+
+        const contentHTML = renderParagraphs(getBlock('content'));
+        const achHTML = renderBullets(getBlock('achievements'));
+        const proHTML = renderBullets(getBlock('promises'));
+        const projHTML = renderProjects((() => { const m=/\'projects\'\s*:\s*\[([\s\S]*?)\]/m.exec(sec.body); return m? m[1] : ''; })());
+
+        const wrap = document.createElement('div');
+        wrap.innerHTML = `
+          ${contentHTML}
+          ${(achHTML || proHTML) ? `<div class=\"grid md:grid-cols-2 gap-6 mt-2\">
+              ${achHTML ? `<div><div class=\"font-semibold mb-2\">Mafanikio</div>${achHTML}</div>` : ''}
+              ${proHTML ? `<div><div class=\"font-semibold mb-2\">Ahadi</div>${proHTML}</div>` : ''}
+            </div>` : ''}
+          ${projHTML}
+        `;
+        panel.appendChild(wrap);
+
+        btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          btn.querySelector('span span:last-child').textContent = expanded ? '+' : '−';
+          panel.classList.toggle('hidden');
+          const map = JSON.parse(localStorage.getItem('ilaniExpanded') || '{}');

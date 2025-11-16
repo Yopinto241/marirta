@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="sw">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="./">
+  <title>Ofisi ya Mbunge Marirta Gido – Nyumbani</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- SEO -->
+  <meta name="description" content="Ofisi ya Mbunge Marirta Gido - Miradi, Habari, na Mawasiliano rasmi kwa Mkoa wa Arusha (Viti Maalumu).">
+  <link rel="canonical" href="https://example.tz/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0ea5e9">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ofisi ya Mbunge Marirta Gido">
+  <meta property="og:description" content="Miradi, Habari, na Mawasiliano kutoka Ofisi ya Mbunge Marirta Gido.">
+  <meta property="og:image" content="assets/og-cover.jpg">
+  <meta property="og:url" content="https://example.tz/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ofisi ya Mbunge Marirta Gido">
+  <meta name="twitter:description" content="Habari na Miradi kutoka Ofisi ya Mbunge Marirta Gido.">
+  <meta name="twitter:image" content="assets/og-cover.jpg">
+
+  <!-- Icons -->
+  <link rel="icon" href="./assets/logo.jpg">
+  <link rel="apple-touch-icon" href="./assets/logo.jpg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD: Organization + Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ofisi ya Mbunge Marirta Gido",
+    "url": "https://example.tz/",
+    "logo": "https://example.tz/assets/logo.jpg",
+    "member": {
+      "@type": "Person",
+      "name": "Marirta Gido",
+      "jobTitle": "Mbunge Mteule (Viti Maalumu) - Mkoa wa Arusha",
+      "image": "https://example.tz/assets/marirta-portrait.jpg"
+    },
+    "sameAs": [
+      "https://facebook.com/handle",
+      "https://instagram.com/handle",
+      "https://x.com/handle"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Nyumbani","item":"https://example.tz/"},
+      {"@type":"ListItem","position":2,"name":"Miradi","item":"https://example.tz/projects.html"},
+      {"@type":"ListItem","position":3,"name":"Habari","item":"https://example.tz/news.html"}
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-white text-gray-900" style="font-family:'Poppins',sans-serif;">
+
+  <!-- ===== Header (sticky + glass) ===== -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./assets/logo.jpg" width="40" height="40" alt="Nembo ya Ofisi ya Mbunge Marirta Gido" class="w-10 h-10 rounded-full object-cover">
+        <div class="leading-tight">
+          <span class="block text-base md:text-lg font-semibold">Ofisi ya Mbunge Marirta Gido</span>
+          <span class="block text-xs text-gray-500">Mkoa wa Arusha • Viti Maalumu</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6" aria-label="Menyu Kuu">
+        <a href="./index.html" class="nav-link" data-i18n="nav.home">Nyumbani</a>
+        <a href="./about.html" class="nav-link" data-i18n="nav.about">Kuhusu Mbunge</a>
+        <a href="./projects.html" class="nav-link" data-i18n="nav.projects">Miradi</a>
+        <a href="./news.html" class="nav-link" data-i18n="nav.news">Habari</a>
+        <a href="./gallery.html" class="nav-link" data-i18n="nav.gallery">Picha &amp; Video</a>
+        <a href="./speeches.html" class="nav-link">Hotuba</a>
+        <a href="./blog.html" class="nav-link">Makala</a>
+        <a href="./partners.html" class="nav-link">Wadau</a>
+        <a href="./ilani.html" class="nav-link" data-i18n="nav.ilani">Ilani</a>
+        <a href="./contact.html" class="btn-primary" data-i18n="nav.contact">Wasiliana</a>
+      </nav>
+
+      <!-- Lang + Mobile -->
+      <div class="flex items-center gap-2 relative">
+        <div class="hidden sm:flex border rounded-xl overflow-hidden">
+          <button id="btnSw" type="button" class="lang-btn active">SW</button>
+          <button id="btnEn" type="button" class="lang-btn">EN</button>
+        </div>
+        <button id="quickMenuBtn" class="inline-flex md:hidden p-2 rounded-xl border" aria-expanded="false" aria-controls="quickMenu" aria-label="Menyu ya haraka">⋮</button>
+        <div id="quickMenu" class="menu-dropdown hidden md:hidden">
+          <a href="./index.html" class="menu-item">Nyumbani</a>
+          <a href="./about.html" class="menu-item">Kuhusu Mbunge</a>
+          <a href="./projects.html" class="menu-item">Miradi</a>
+          <a href="./news.html" class="menu-item">Habari</a>
+          <a href="./gallery.html" class="menu-item">Picha &amp; Video</a>
+          <a href="./speeches.html" class="menu-item">Hotuba</a>
+          <a href="./blog.html" class="menu-item">Makala</a>
+          <a href="./partners.html" class="menu-item">Wadau</a>
+          <a href="./ilani.html" class="menu-item">Ilani</a>
+          <a href="./contact.html" class="menu-item">Wasiliana</a>
+        </div>
+        <button id="menuBtn" class="md:hidden p-2 rounded-xl border" aria-expanded="false" aria-controls="mobileMenu" aria-label="Fungua menyu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobileMenu" class="md:hidden hidden border-t bg-white" role="dialog" aria-label="Menyu ya Simu">
+      <div class="px-4 py-3 grid gap-2">
+        <a href="./index.html" class="mobile-link" data-i18n="nav.home">Nyumbani</a>
+        <a href="./about.html" class="mobile-link" data-i18n="nav.about">Kuhusu Mbunge</a>
+        <a href="./projects.html" class="mobile-link" data-i18n="nav.projects">Miradi</a>
+        <a href="./news.html" class="mobile-link" data-i18n="nav.news">Habari</a>
+        <a href="./gallery.html" class="mobile-link" data-i18n="nav.gallery">Picha &amp; Video</a>
+        <a href="./speeches.html" class="mobile-link">Hotuba</a>
+        <a href="./blog.html" class="mobile-link">Makala</a>
+        <a href="./partners.html" class="mobile-link">Wadau</a>
+        <a href="./ilani.html" class="mobile-link" data-i18n="nav.ilani">Ilani</a>
+        <a href="./contact.html" class="btn-primary text-center" data-i18n="nav.contact">Wasiliana</a>
+        <div class="sm:hidden flex gap-2 pt-2">
+          <button id="btnSwM" class="lang-pill active">SW</button>
+          <button id="btnEnM" class="lang-pill">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero (unique gradient + subtle shapes) ===== -->
+    <section class="relative overflow-hidden">
+      <!-- background gradient -->
+      <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-br from-sky-100 via-white to-emerald-50"></div>
+      <!-- animated orbs -->
+      <div aria-hidden="true" class="blob blob-1"></div>
+      <div aria-hidden="true" class="blob blob-2"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+            <span data-i18n="site.title">Ofisi ya Mbunge Marirta Gido</span>
+          </h1>
+          <p class="text-gray-700 text-lg mb-6" data-i18n="home.tagline">
+            Kuwawezesha wanawake na vijana kupitia elimu, afya, na fursa za ajira.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="projects.html" class="btn-primary" data-i18n="home.ctaProjects">Tazama Miradi</a>
+            <a href="contact.html" class="btn-ghost" data-i18n="home.ctaContact">Wasiliana Nasi</a>
+            <a href="ilani.html" class="btn-ghost" data-i18n="home.ctaIlani">Soma Ilani</a>
+          </div>
+          <!-- mini trust bar -->
+          <div class="mt-6 flex items-center gap-4 text-sm text-gray-600">
+            <span class="inline-flex items-center gap-2"><span class="dot"></span>Uwazi</span>
+            <span class="inline-flex items-center gap-2"><span class="dot"></span>Ushirikishwaji</span>
+            <span class="inline-flex items-center gap-2"><span class="dot"></span>Uwajibikaji</span>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <img id="heroImg" src="assets/logo1.jpg" alt="Marirta Gido" width="320" height="320"
+               class="w-72 h-72 md:w-80 md:h-80 rounded-[1.5rem] object-cover shadow-2xl ring-1 ring-black/5 transition-transform hover:scale-105"
+               loading="eager" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Latest News (animated cards) ===== -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-end justify-between mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold" data-i18n="home.latestNews">Habari Mpya</h2>
+          <a href="news.html" class="text-sky-700 hover:underline" data-i18n="home.viewAll">Tazama Zote</a>
+        </div>
+        <!-- Rotating highlight card -->
+        <div id="newsRotator" class="flip-card flip-hover mb-6">
+          <div class="flip-inner">
+            <a class="flip-face flip-front block bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5" href="news.html">
+              <div class="grid md:grid-cols-2">
+                <img id="newsRotImg" src="./assets/a1.jpg" alt="Habari" class="w-full h-56 md:h-64 object-cover">
+                <div class="p-4">
+                  <h3 id="newsRotTitle" class="font-semibold text-lg">Habari ya kuangaziwa</h3>
+                  <p id="newsRotText" class="text-gray-700 mt-1 fade-bottom">Tazama taarifa na matukio muhimu kutoka ofisini...</p>
+                </div>
+              </div>
+            </a>
+            <a class="flip-face flip-back block bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5" href="news.html">
+              <div class="grid md:grid-cols-2">
+                <img id="newsRotImgB" src="./assets/a2.jpg" alt="Habari" class="w-full h-56 md:h-64 object-cover">
+                <div class="p-4">
+                  <h3 id="newsRotTitleB" class="font-semibold text-lg">Matukio mengine yanayoendelea</h3>
+                  <p id="newsRotTextB" class="text-gray-700 mt-1 fade-bottom">Endelea kufuatilia taarifa zetu — soma zaidi...</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div id="homeNewsList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- filled from data.json by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Featured Projects (animated cards) ===== -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-end justify-between mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold" data-i18n="home.featuredProjects">Miradi Iliyoangaziwa</h2>
+          <a href="projects.html" class="text-sky-700 hover:underline" data-i18n="home.viewAll">Tazama Zote</a>
+        </div>
+        <!-- Rotating highlight card for projects -->
+        <div id="projRotator" class="flip-card flip-hover mb-6">
+          <div class="flip-inner">
+            <a class="flip-face flip-front block bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5" href="projects.html">
+              <div class="grid md:grid-cols-2">
+                <img id="projRotImg" src="./assets/m1.jpg" alt="Mradi" class="w-full h-56 md:h-64 object-cover">
+                <div class="p-4">
+                  <h3 id="projRotTitle" class="font-semibold text-lg">Mradi wa kuangaziwa</h3>
+                  <p id="projRotText" class="text-gray-700 mt-1 fade-bottom">Mchango wa ofisi katika uwezeshaji wa wanawake na vijana...</p>
+                </div>
+              </div>
+            </a>
+            <a class="flip-face flip-back block bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5" href="projects.html">
+              <div class="grid md:grid-cols-2">
+                <img id="projRotImgB" src="./assets/m2.jpg" alt="Mradi" class="w-full h-56 md:h-64 object-cover">
+                <div class="p-4">
+                  <h3 id="projRotTitleB" class="font-semibold text-lg">Mradi mwingine unaoendelea</h3>
+                  <p id="projRotTextB" class="text-gray-700 mt-1 fade-bottom">Soma zaidi kuhusu hatua na mafanikio ya miradi...</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div id="homeProjectsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- filled from data.json by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Testimonials ===== -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Ushuhuda wa Wananchi</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <blockquote class="bg-white rounded-2xl p-5 shadow-sm ring-1 ring-black/5">
+            <p class="text-gray-800">“Tumepata mafunzo ya ujasiriamali na vifaa — sasa kundi letu limekua!”</p>
+            <footer class="mt-3 text-sm text-gray-600">— Mwanakijiji, Arusha</footer>
+          </blockquote>
+          <blockquote class="bg-white rounded-2xl p-5 shadow-sm ring-1 ring-black/5">
+            <p class="text-gray-800">“Mradi wa stadi za TEHAMA umebadili maisha ya vijana wengi.”</p>
+            <footer class="mt-3 text-sm text-gray-600">— Mwalimu, Sekondari</footer>
+          </blockquote>
+          <blockquote class="bg-white rounded-2xl p-5 shadow-sm ring-1 ring-black/5">
+            <p class="text-gray-800">“Huduma za afya ya uzazi zimeboreshwa kupitia kampeni za elimu.”</p>
+            <footer class="mt-3 text-sm text-gray-600">— Afisa Afya, Kata</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Photos & Video Slideshow ===== -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Picha &amp; Video</h2>
+        <div class="slider rounded-2xl overflow-hidden shadow ring-1 ring-black/5">
+          <div id="homeSliderTrack" class="slider-track">
+            <!-- slides inserted by JS from assets -->
+          </div>
+          <div class="slider-nav px-3">
+            <button id="slidePrev" class="slider-btn">‹</button>
+            <button id="slideNext" class="slider-btn">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Social Feeds ===== -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Mitandao ya Kijamii</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="https://www.instagram.com/official_marirtagido" target="_blank" rel="noopener"
+             class="block bg-white rounded-2xl p-5 shadow-sm ring-1 ring-black/5 hover:shadow-lg transition">
+            <div class="font-semibold mb-2">Instagram</div>
+            <p class="text-gray-700">Fuata safari yetu @official_marirtagido</p>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener"
+             class="block bg-white rounded-2xl p-5 shadow-sm ring-1 ring-black/5 hover:shadow-lg transition">
+            <div class="font-semibold mb-2">YouTube</div>
+            <p class="text-gray-700">Tazama hotuba na video za miradi</p>
+          </a>
+          <a href="https://www.facebook.com/official_marirtagido" target="_blank" rel="noopener"
+             class="block bg-white rounded-2xl p-5 shadow-sm ring-1 ring-black/5 hover:shadow-lg transition">
+            <div class="font-semibold mb-2">Facebook</div>
+            <p class="text-gray-700">Habari na matangazo kutoka ofisini</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Featured Photos (animated cards) ===== -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-end justify-between mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold">Picha Zilizochaguliwa</h2>
+          <a href="gallery.html" class="text-sky-700 hover:underline">Tazama Zote</a>
+        </div>
+        <div id="homeGalleryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><!-- filled by main.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== Map / Directions ===== -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Ramani na Maelekezo</h2>
+        <p class="text-gray-700 mb-4">Clock Tower, Arusha, Tanzania</p>
+        <div class="rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5">
+          <iframe title="Ramani ya Clock Tower Arusha" width="100%" height="420" style="border:0" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63818.52070783031!2d36.612!3d-3.371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18371ea5f8798f19%3A0x8dc9dfb2b5c6c8e2!2sClock%20Tower%2C%20Arusha%2C%20Tanzania!5e0!3m2!1sen!2stz!4v1700000000000">
+          </iframe>
+        </div>
+        <div class="mt-3">
+          <a class="text-sky-700 hover:underline" target="_blank" rel="noopener" href="https://maps.google.com/?q=Clock+Tower+Arusha">
+            Fungua kwenye Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer (polished) ===== -->
+  <footer class="bg-slate-900 text-slate-100">
+    <div class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="assets/logo.jpg" width="40" height="40" alt="Nembo" class="w-10 h-10 rounded-full object-cover">
+          <span class="font-semibold">Ofisi ya Mbunge Marirta Gido</span>
+        </div>
+        <p class="text-slate-300 text-sm">
+          Tovuti rasmi kwa taarifa, miradi na mawasiliano ya Ofisi ya Mbunge Mteule (Viti Maalumu) – Mkoa wa Arusha.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">Viungo</h3>
+        <ul class="space-y-2 text-slate-300">
+          <li><a class="footer-link" href="about.html">Kuhusu</a></li>
+          <li><a class="footer-link" href="projects.html">Miradi</a></li>
+          <li><a class="footer-link" href="news.html">Habari</a></li>
+          <li><a class="footer-link" href="contact.html">Wasiliana</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">Mawasiliano</h3>
+        <ul class="space-y-2 text-slate-300">
+          <li>Email: <a class="underline hover:text-white" href="mailto:info@marirtagido.or.tz">info@marirtagido.or.tz</a></li>
+          <li>Simu: <a class="underline hover:text-white" href="tel:+255700000000">+255 700 000 000</a></li>
+          <li>Arusha, Tanzania</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">Jarida</h3>
+        <form class="flex gap-2" action="#" method="post">
+          <input type="email" placeholder="Barua pepe" class="flex-1 px-4 py-2 rounded-xl text-slate-900" required>
+          <button class="px-4 py-2 rounded-xl bg-white text-slate-900 font-medium hover:opacity-90">Jiunge</button>
+        </form>
+        <div class="flex gap-4 mt-4 text-slate-300">
+          <a href="#" aria-label="Facebook" class="hover:text-white">Facebook</a>
+          <a href="#" aria-label="Instagram" class="hover:text-white">Instagram</a>
+          <a href="#" aria-label="X" class="hover:text-white">X</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-4 text-sm text-slate-300 flex flex-wrap items-center justify-between">
+        <span>© <span id="yearSpan"></span> Ofisi ya Mbunge Marirta Gido.</span>
+        <a href="#top" class="hover:underline">Rudi juu ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>document.getElementById('yearSpan').textContent = new Date().getFullYear();</script>
+  <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+    });
+    revealify(galWrap);
+  }
+}
+
+// Additional renders for inner pages
+async function renderProjectsPage() {
+  const wrap = document.getElementById('projectsGrid');
+  if (!wrap) return;
+  const lang = document.documentElement.lang || 'sw';
+  const data = await getData();
+  wrap.innerHTML = '';
+  (data.projects || []).forEach(p => {
+    const title = lang === 'sw' ? p.title_sw : p.title_en;
+    const desc  = lang === 'sw' ? p.desc_sw  : p.desc_en;
+    wrap.insertAdjacentHTML('beforeend', `
+      <article class="card bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-xl transition">
+        <img src="${p.img}" alt="${title}" class="w-full h-44 object-cover" loading="lazy">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">${title}</h3>
+          <p class="text-gray-700 mt-1">${desc}</p>
+        </div>
+      </article>
+    `);
+  });
+  revealify(wrap);
+}
+
+async function renderNewsPage() {
+  const list = document.getElementById('newsList');
+  if (!list) return;
+  const lang = document.documentElement.lang || 'sw';
+  const data = await getData();
+  list.innerHTML = '';
+  (data.news || []).forEach(n => {
+    const title = lang === 'sw' ? n.title_sw : n.title_en;
+    const date = new Date(n.date).toLocaleDateString(lang === 'sw' ? 'sw-TZ' : 'en-GB', { day:'2-digit', month:'long', year:'numeric' });
+    list.insertAdjacentHTML('beforeend', `
+      <article class="card bg-white rounded-2xl p-4 shadow-sm ring-1 ring-black/5">
+        <div class="text-sm text-gray-500">${date}</div>
+        <h3 class="font-semibold mt-1">${title}</h3>
+        ${n.summary ? `<p class=\"text-gray-700 mt-1\">${lang==='sw'? (n.summary_sw||n.summary): (n.summary_en||n.summary)}</p>` : ''}
+        ${n.link ? `<a class=\"text-sky-700 hover:underline mt-2 inline-block\" href=\"${n.link}\">Soma zaidi →</a>` : ''}
+      </article>
+    `);
+  });
+  revealify(list);
+}
+
+async function renderGalleryPage() {
+  const grid = document.getElementById('galleryGrid');
+  const vgrid = document.getElementById('videoGrid');
+  if (!grid && !vgrid) return;
+  const lang = document.documentElement.lang || 'sw';
+  const data = await getData();
+
+  if (grid) {
+    grid.innerHTML = '';
+    (data.gallery || []).filter(g => (g.type || 'image') === 'image').forEach(g => {
+      const title = lang === 'sw' ? (g.title_sw || '') : (g.title_en || g.title_sw || '');
+      grid.insertAdjacentHTML('beforeend', `
+        <figure class="card bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-xl transition">
+          <img src="${g.img}" alt="${title || 'Picha'}" class="w-full h-56 object-cover" loading="lazy">
+          ${title ? `<figcaption class=\"p-3 text-sm text-gray-700\">${title}</figcaption>` : ''}
+        </figure>
+      `);
+    });
+    revealify(grid);
+  }
+
+  if (vgrid) {
+    vgrid.innerHTML = '';
+    (data.gallery || []).filter(g => (g.type || 'image') === 'video').forEach(g => {
+      const title = lang === 'sw' ? (g.title_sw || '') : (g.title_en || g.title_sw || '');
+      const src = g.embed || g.url || '';
+      vgrid.insertAdjacentHTML('beforeend', `
+        <div class="card bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-xl transition">
+          <div class="aspect-video w-full bg-black">
+            <iframe src="${src}" title="${title || 'Video'}" class="w-full h-full" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          </div>
+          ${title ? `<div class=\"p-3 text-sm text-gray-700\">${title}</div>` : ''}

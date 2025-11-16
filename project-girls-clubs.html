@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="sw">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-lock="true">Klabu za Wasichana Shuleni</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo.jpg">
+  <meta name="description" content="Klabu za Wasichana Shuleni: Elimu ya afya ya uzazi na stadi za maisha.">
+  <script type="application/json" id="project-data">{
+    "slug":"project-girls-clubs",
+    "title_sw":"Klabu za Wasichana Shuleni",
+    "title_en":"School Girls' Clubs",
+    "desc_sw":"Elimu ya afya ya uzazi, usawa wa kijinsia na stadi za maisha kwa wasichana.",
+    "desc_en":"Reproductive health, gender equality, and life-skills education for girls.",
+    "impact_sw":["Wasichana 5,000 wamefikiwa","Viongozi 300 wa vilabu wamefundishwa","Vipindi 1,200 vya mafunzo vimefanyika"],
+    "impact_en":["5,000 girls reached","300 club leaders trained","1,200 training sessions conducted"],
+    "location_sw":"Arusha, Karatu, Meru",
+    "location_en":"Arusha, Karatu, Meru",
+    "startDate":"2024-11-01",
+    "status":"active",
+    "coverImg":"assets/m2.jpg",
+    "gallery":["assets/m2.jpg","assets/m5.jpg","assets/ml.jpg"]
+  }</script>
+</head>
+<body class="bg-white text-gray-900">
+  <header class="border-b bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.jpg" alt="Logo" class="w-10 h-10 rounded-full object-cover">
+        <span id="brandTitle" class="text-lg font-semibold">Ofisi ya Mbunge</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" data-nav class="text-gray-700 hover:text-blue-600">Nyumbani</a>
+        <a href="projects.html" data-nav class="text-blue-600 font-semibold" aria-current="page">Miradi</a>
+        <a href="ilani.html" data-nav class="text-gray-700 hover:text-blue-600">Ilani</a>
+        <a href="news.html" data-nav class="text-gray-700 hover:text-blue-600">Habari</a>
+        <a href="contact.html" data-nav class="text-gray-700 hover:text-blue-600">Wasiliana</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-12">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <img src="assets/m2.jpg" alt="Klabu za Wasichana Shuleni" class="w-full h-64 object-cover rounded-2xl shadow mb-6">
+          <h1 class="text-3xl font-bold mb-2">Klabu za Wasichana Shuleni</h1>
+          <p class="text-gray-700 mb-4">Elimu ya afya ya uzazi, usawa wa kijinsia na stadi za maisha kwa wasichana.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-6">
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <div class="text-xs uppercase text-gray-500">Eneo</div>
+              <div>Arusha, Karatu, Meru</div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <div class="text-xs uppercase text-gray-500">Hali</div>
+              <div>Inaendelea (kuanzia 2024-11-01)</div>
+            </div>
+          </div>
+          <h2 class="text-xl font-semibold mb-2">Athari (Impact)</h2>
+          <ul class="list-disc ml-5 text-gray-700 mb-6">
+            <li>Wasichana 5,000 wamefikiwa</li>
+            <li>Viongozi 300 wa vilabu wamefundishwa</li>
+            <li>Vipindi 1,200 vya mafunzo vimefanyika</li>
+          </ul>
+        </div>
+        <aside>
+          <div class="grid gap-3">
+            <img src="assets/m5.jpg" alt="Gallery" class="w-full h-40 object-cover rounded-xl">
+            <img src="assets/ml.jpg" alt="Gallery" class="w-full h-40 object-cover rounded-xl">
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600">&copy; <span id="yearSpan"></span> Ofisi ya Mbunge.</div>
+    <script>document.getElementById('yearSpan').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
+

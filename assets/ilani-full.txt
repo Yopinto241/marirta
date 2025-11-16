@@ -1,0 +1,293 @@
+const Map<String, Map<String, dynamic>> ilaniContent = {
+  'utangulizi': {
+    'content': '''
+Ilani ya Chama Cha Mapinduzi ya Mkoa wa Arusha ni sehemu ya Ilani ya CCM ya Uchaguzi Mkuu wa mwaka 2025. Ilani hii ya Mkoa imeandaliwa kama sehemu ya utekelezaji wa maono ya Mwenyekiti wa Chama cha Mapinduzi, Dkt. Samia Suluhu Hassan, na maelekezo ya Mkutano Mkuu wa CCM, ya kuandaa Ilani ndogo kwa kila mkoa, sambamba na Ilani ya CCM ya Uchaguzi Mkuu wa Mwaka 2025, kwa kuzingatia mazingira ya mkoa husika.
+
+Mkoa wa Arusha una ukubwa wa kilometa za mraba 34,515.5 na umepakana na mikoa ya Manyara, Kilimanjaro, Simiyu na Mara. Kiutawala Mkoa una Wilaya 6 na Halmashauri 7, Tarafa 23, Kata 160, Vijiji 395, Mitaa 154 na Vitongoji 1,510. Kwa mujibu wa Sensa ya Watu na Makazi ya mwaka 2022, Mkoa wa Arusha una jumla ya watu 2,356,255 ambapo kati ya hao wanaume ni 1,125,616 na wanawake ni 1,230,639.
+
+Kichama, Mkoa wa Arusha una Wilaya 7, Kata 161, Matawi 756, na Mashina 9,806.
+
+Ilani ya Mkoa wa Arusha imeandaliwa katika sehemu kuu nne, ambazo ni: Utangulizi, Tathmini ya Utekelezaji wa Ilani ya CCM kwa Ajili ya Uchaguzi Mkuu wa Mwaka 2020, Ahadi na Maelekezo ya CCM katika Kipindi cha 2025-2030 na Miradi Itakayotekelezwa katika Kipindi cha 2025-2030.
+'''
+  },
+  'afya': {
+    'achievements': '''
+- Kuimarika na kuongezeka kwa upatikanaji wa dawa, vifaa, vifaa tiba na vitendanishi katika vituo vya kutolea huduma za afya kutoka asilimia 58 mwaka 2020 hadi asilimia 85 mwaka 2025.
+- Kujenga Hospitali 2 za Wilaya, ambazo ni Hospitali ya Jiji la Arusha na Karatu.
+- Kujenga na kuongeza vituo vya afya kutoka 58 mwaka 2020 hadi 66 mwaka 2025.
+- Kujenga na kuongeza zahanati kutoka 312 mwaka 2021 hadi 350 mwaka 2025.
+- Kukamilisha ukarabati mkubwa wa Hospitali ya Rufaa ya Mount Meru ikihusisha ujenzi wa majengo 4 ya huduma za dharura katika Hospitali hiyo na Hospitali za Wilaya za Meru, Karatu, Longido na Ngorongoro.
+- Kujenga na kuongeza idadi ya Vituo vya Afya vinavyotoa huduma za upasuaji kutoka 38 mwaka 2020 hadi 51 mwaka 2025.
+- Kujenga na kuongeza nyumba za watumishi wa afya kutoka 291 mwaka 2020 hadi 335 mwaka 2025.
+- Kuongeza magari ya wagonjwa kutoka 7 mwaka 2020 hadi magari 13 mwaka 2025.
+''',
+    'promises': '''
+- Kuongeza upatikanaji wa dawa hadi asilimia 100 kwa mwaka 2030.
+- Kujenga majengo ya dharura katika hospitali za wilaya kutoka 3 hadi 7.
+- Kupunguza vifo vya akina mama wakati wa uzazi hadi asilimia 0.
+- Kuimarisha huduma za lishe kwa watoto na wajawazito.
+- Kuongeza idadi ya zahanati na vituo vya afya.
+'''
+  },
+  'elimu': {
+    'achievements': '''
+- Kuongezeka kwa uandikishaji na udahili wa wanafunzi (Elimu ya Awali-67,143, elimu msingi-373,504 na elimu sekondari-163,542), ufaulu umeongezeka kutoka asilimia 89.7 mwaka 2020 hadi asilimia 91.94 mwaka 2025, pamoja na kupunguza umbali wa wanafunzi kufuata huduma ya elimu kutoka umbali wa wastani kilomita 8 hadi kilomita 2 mtawali.
+- Kuendelea kutekeleza Mpango wa Elimu bila Ada kuanzia elimu ya awali hadi kidato cha sita kwa kuongeza fedha za kugharamia mpango huo.
+- Kujenga Shule mpya 27 za Sekondari na Shule mpya 7 za Msingi.
+- Kujenga madarasa 843 ya shule za Msingi na Sekondari pamoja na kuongeza madarasa ya elimu ya awali kutoka madarasa 802 mwaka 2020 hadi madarasa 853 mwaka 2025.
+- Kujenga mabweni 60 na maabara 78 katika Shule za Sekondari.
+- Kuongezeka kwa idadi ya walimu wa sayansi walioajiriwa kutoka walimu 112 mwaka 2020 hadi walimu 314 mwaka 2025.
+- Kukamilika kwa ujenzi wa miundombinu ya vyuo vya kati ikiwemo:
+  - Jengo la ghorofa lenye madarasa 8, maabara 6, ofisi 26 na bweni la wasichana katika Chuo cha Ufundi Arusha.
+  - Miundombinu ya kujifunzia, kumbi pacha za mihadhara na hosteli ya wasichana katika Chuo cha Maendeleo ya Jamii Tengeru.
+  - Jengo la utawala, madarasa 4, ofisi 2, matundu ya vyoo 8, maktaba na chumba cha kompyuta katika Chuo cha Ualimu Ngorongoro.
+  - Kuendelea na ujenzi wa majengo 6 katika Chuo cha Ufundi VETA Samunge ambayo yamefikia wastani wa asilimia 90.
+''',
+    'promises': '''
+- Kuongeza shule za msingi hadi 611 na sekondari hadi 206.
+- Kuongeza madarasa ya msingi hadi 8,172 na sekondari hadi 9,007.
+- Kuongeza ufaulu hadi asilimia 96-100 kwa ngazi zote.
+- Kuongeza uandikishaji wa wanafunzi kwa ngazi zote.
+- Kuanzisha mpango wa chakula shuleni.
+'''
+  },
+  'maji': {
+    'achievements': '''
+- Kuimarika kwa huduma ya upatikanaji wa maji safi kwa wananchi kutoka asilimia 69.2 mwaka 2020 hadi asilimia 77.3 mwaka 2025.
+- Kuongezeka kwa uzalishaji wa maji katika jiji la Arusha kutoka lita milioni 60 mwaka 2020 hadi lita milioni 200 kwa siku mwaka 2025, na kuongezeka kwa muda wa upatikanaji wa huduma ya maji kutoka masaa 11 hadi 22 kwa siku kulikotokana na kukamilika kwa miradi mikubwa ya maji.
+- Kuongezeka kwa idadi ya vijiji vyenye huduma ya maji kutoka vijiji 304 mwaka 2020 hadi vijiji 351 mwaka 2025.
+- Kukamilika kwa miradi 72 na kuanza kutoa huduma ya maji kwa wananchi waishio katika vijiji 47 na kuendelea na utekelezaji wa miradi 75 iliyofikia wastani wa asilimia 62.
+- Kununua seti moja ya mtambo wa kuchimba visima na hivyo kuongeza kasi ya uchimbaji wa visima vya maji ambapo jumla ya visima 91 vimechimbwa. Pia, kununua seti moja ya mtambo wa ujenzi wa mabwawa.
+''',
+    'promises': '''
+- Kuongeza huduma za maji hadi asilimia 90 vijijini na asilimia 95 mjini.
+- Kuongeza uzalishaji wa maji vijijini hadi lita 70,722,945, mjini hadi lita milioni 200.
+- Kuchimba visima hadi 236.
+- Kuongeza mabwawa hadi 25.
+'''
+  },
+  'kilimo': {
+    'achievements': '''
+- Kuongezeka kwa tija ya uzalishaji wa mazao ya chakula kwa hekta kutoka tani 47.1 kwa hekta mwaka 2020 hadi tani 50.5 kwa hekta mwaka 2025 sambamba na kuongezeka kwa uzalishaji wa mazao hayo kutoka tani 402,174 hadi tani 450,021 mtawali.
+- Kuimarika upatikanaji wa pembejeo za kilimo kutoka asilimia 70 kwa mwaka 2020 hadi asilimia 84 mwaka 2025, kulikochangiwa na mbolea ya ruzuku ya Serikali.
+- Kuimarika huduma za ugani kwa kununua vitendea kazi ikiwemo pikipiki 214, vipima udongo 5 na vishikwambi 193 kwa ajili ya maafisa ugani.
+- Kuongezeka kwa wakulima wanaopata huduma za ugani (M-Kilimo) kutoka wakulima 83,333 mwaka 2020 hadi wakulima 102,281 mwaka 2025.
+''',
+    'promises': '''
+- Kuongeza mbegu bora hadi tani 2,377.4.
+- Kuongeza mbolea ya ruzuku hadi tani 25,512.3.
+- Kuongeza skimu za umwagiliaji hadi 156.
+- Kujenga masoko 15 na maghala 82 ya mazao.
+'''
+  },
+  'mifugo': {
+    'achievements': '''
+- Kuongezeka kwa dawa ya ruzuku kutoka lita 3,640 mwaka 2020 hadi lita 28,707 mwaka 2025.
+- Kujenga majosho 16 ya kuogeshea mifugo katika Halmashauri za Wilaya za Arusha, Karatu, Longido, Monduli na Ngorongoro.
+- Kuimarisha huduma za ugani kwa kuajiri maafisa ugani 255 pamoja na kugawa pikipiki 13.
+- Kuongezeka kwa mashamba darasa ya mfano kutoka mashamba 49 mwaka 2020 hadi 149 mwaka 2025.
+- Kutoa elimu ya ufugaji bora na hivyo kuongeza idadi ya wafugaji waliobadilika na kuanza kufuga kisasa kutoka wafugaji 21,535 mwaka 2020 hadi 30,327 mwaka 2025.
+- Kuongezeka kwa idadi ya viwanda vidogo vya kusindika mazao ya mifugo vilivyoanzishwa na sekta binafsi kutoka viwanda 31 mwaka 2020 hadi viwanda 117 mwaka 2025, viwanda vya kati kutoka 5 hadi 15, viwanda vikubwa kutoka 2 hadi 7, na hivyo kuongeza kiasi cha mazao ya mifugo kilichosindikwa kutoka tani 128.16 hadi tani 371.22 mtawali.
+- Kuongezeka kwa idadi ya wafugaji waliojiunga katika vyama vya ushirika kutoka wafugaji 1,791 mwaka 2020 hadi 6,768 mwaka 2025.
+''',
+    'promises': '''
+- Kutenga hekta 467,435 kwa ufugaji.
+- Kujenga majosho 30, machinjio hadi 12, minada hadi 62.
+- Kuongeza dawa na chanjo za mifugo hadi dozi 3,399,204.
+'''
+  },
+  'viwanda': {
+    'achievements': '''
+- Kuanzishwa kwa kiwanda kimoja kikubwa, viwanda vya kati 12, vidogo 309 na vidogo sana 1,014.
+- Kuongezeka kwa ajira za viwandani.
+- Kujenga soko la kimkakati la mpakani katika Halmashauri ya Wilaya ya Longido.
+- Kuongezeka kwa wafanyabiashara waliounganishwa na masoko ya ndani na nje ya nchi.
+''',
+    'promises': '''
+- Kuongeza maeneo ya viwanda hadi hekta 33,200.
+- Kujenga kongani 7 za viwanda.
+- Kuanzisha viwanda vya kimkakati (dawa, nyama, chuma, mbolea, sukari, mafuta ya kula).
+'''
+  },
+  'miundombinu': {
+    'achievements': '''
+- Kujenga madaraja 11 katika Wilaya za Arusha, Karatu, Monduli na Longido.
+- Kujenga makalavati 8 katika Wilaya za Karatu, Ngorongoro na Monduli.
+- Kujenga kwa kiwango cha lami barabara za:
+  - Wasso-Sale (km 49).
+  - Tpackers-Losinyai (km 1.05), kipande cha kuanzia Moshono Kona-Kiseriani hadi Relini.
+- Kusainiwa kwa mikataba ya ujenzi wa barabara za:
+  - Arusha-Kibaya-Kongwa (km 430).
+  - Tengeru-Usa River (km 11.3).
+- Kukamilika kwa upembuzi yakinifu na usanifu wa kina wa barabara za:
+  - Mto wa Mbu hadi Loliondo (km 164).
+  - Karatu-Mbulu-Hydom-Singida (km 190).
+  - Barabara ya Mto wa Mbu-Longido-Karatu (km 300).
+  - Longido-Oldonyolengai (km 98).
+  - Arusha-Kisongo (km 9.1) kuwa njia nne.
+  - Makutano ya Momela hadi Uwanja wa Ndege wa Kimataifa wa Kilimanjaro (KIA) (km 20.3) kuwa njia nne.
+- Kukamilika kwa upanuzi wa kiwanja cha ndege cha Arusha, ukijumuisha upanuzi wa jengo la abiria na ukarabati wa njia ya kuruka na kutua ndege kwa kiwango cha lami.
+- Kuendelea na utekelezaji wa mradi wa TACTIC katika jiji la Arusha unaohusu uboreshaji wa barabara ya urefu wa km 1.5 ya Oljoro, Engo Sheraton.
+''',
+    'promises': '''
+- Ujenzi wa barabara (Arusha-Kibaya-Kongwa km 430).
+- Upanuzi wa barabara za mjini.
+- Reli ya kisasa Tanga-Arusha-Musoma.
+- Kujenga barabara za lami km 35 na madaraja 8.
+'''
+  },
+  'nishati': {
+    'achievements': '''
+- Umeme umefikishwa asilimia 68.8 ya vitongoji.
+- Njia ya kilovoti 400 (Singida-Arusha-Namanga) imejengwa.
+- Mitungi 6,500 ya gesi yamesambazwa kwa nishati safi ya kupikia.
+''',
+    'promises': '''
+- Kuunganisha umeme vitongoji vyote.
+- Kuhimiza nishati safi ya kupikia kwa matumizi ya nishati mbadala.
+'''
+  },
+  'ardhi': {
+    'achievements': '''
+- Hati miliki za ardhi zimeongezeka kutoka 3,869 hadi 21,301.
+- Vijiji vyenye masijala za ardhi vimeongezeka kutoka 29 hadi 234.
+- Makazi yaliyorasimishwa yameongezeka kutoka 3,611 hadi 18,383.
+''',
+    'promises': '''
+- Kuongeza hati miliki za kielektroniki hadi 205,000.
+- Kuongeza vijiji vyenye mpango wa matumizi ya ardhi hadi 280.
+- Kupima ardhi hadi hekta 7,260.
+'''
+  },
+  'maliasili_utalii': {
+    'achievements': '''
+- Ajira za utalii zimeongezeka.
+- Ranchi 5 za wanyamapori zimeanzishwa.
+- Miti milioni 6.1 iliyopandwa.
+- Uzalishaji wa mazao ya misitu na nyuki umeongezeka kutoka asilimia 25 hadi 75.
+''',
+    'promises': '''
+- Kuongeza watalii hadi milioni 7.
+- Kujenga kituo cha mikutano cha kisasa.
+- Kuongeza maeneo ya hifadhi ya wanyamapori hadi 4.
+- Kuanzisha vituo 7 vya kuhifadhia asali.
+'''
+  },
+  'uwezeshaji_kiuchumi': {
+    'achievements': '''
+- Mikopo ya asilimia 10 kwa wanawake, vijana, na watu wenye ulemavu imeongezeka.
+- Miradi ya TASAF imeongezeka kutoka 15 hadi 413, na kaya zinazonufaika kutoka 4,663 hadi 29,000.
+''',
+    'promises': '''
+- Kuzalisha ajira kupitia viwanda vya kuongeza thamani.
+- Kuanzisha vyuo 7 vya ufundi.
+- Kuongeza mikopo hadi bilioni 20.
+- Kuimarisha miradi ya TASAF.
+'''
+  },
+  'michezo_sanaa': {
+    'achievements': '''
+- Vilabu vya michezo vimeongezeka hadi 99, viwanja 16 vimeboreshwa, na vikundi vya sanaa kutoka 54 hadi 90.
+- Uwanja wa mpira wa watazamaji 30,000 unajengwa (asilimia 42.23 umekamilika).
+''',
+    'promises': '''
+- Kujenga viwanja 7 vya michezo.
+- Kuanzisha vituo vya umahiri vya michezo.
+- Kujenga makumbusho ya kiutamaduni na kituo cha utafiti wa malikale.
+'''
+  },
+  'utawala_bora': {
+    'achievements': '''
+- Mahakama ya Afrika ya Haki za Binadamu inajengwa (TZS 61 bilioni).
+- Makosa ya dawa za kulevya yamepungua kutoka 260 hadi 185.
+- Matukio ya uvunjifu wa amani yamepungua kutoka 405 hadi 157.
+''',
+    'promises': '''
+- Kuimarisha usalama na ulinzi.
+- Kupunguza rushwa.
+- Kuwashirikisha wananchi katika maendeleo.
+- Kuimarisha huduma za serikali za dijitali.
+'''
+  },
+  'miradi': {
+    'content': '''
+Miradi ya Maendeleo katika Mkoa wa Arusha (2025-2030): The following list includes a subset of projects for brevity. The full list of 248 projects is available in the official CCM Arusha Region Manifesto document.
+''',
+    'projects': [
+      {
+        'id': 1,
+        'name': 'Ujenzi wa miradi ya maji katika vijiji 7 vya Arumeru',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 2,
+        'name': 'Mradi wa Maji Embaseni-Ngardoto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 3,
+        'name': 'Ujenzi wa Mradi wa Maji Kilimatinde',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 4,
+        'name': 'Ukarabati wa Skimu ya Ngarenanyuki',
+        'sector': 'Maji',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 5,
+        'name': 'Ujenzi wa uwanja wa michezo Bondeni City',
+        'sector': 'Michezo',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 6,
+        'name': 'Ukarabati wa Ofisi 10 za kata na ukarabati wa jengo la utawala',
+        'sector': 'Utawala',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 7,
+        'name': 'Kujenga jengo la Kitivo cha Uhasibu na Fedha',
+        'sector': 'Elimu',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 8,
+        'name': 'Ukarabati wa Skimu ya Maji Manyire, Marurani, Maji moto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 9,
+        'name': 'Ujenzi wa Mradi wa Msitu wa Mbugoo',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 10,
+        'name': 'Ujenzi wa Mradi wa maji Ngurdoloto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 11,
+        'name': 'Ujenzi wa Mradi wa Maji Ngyani',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 12,
+        'name': 'Ujenzi wa Mradi wa Maji Kata ya Songoro',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      }
+      // ... (Orodha inaendelea kama ilivyotolewa kwenye hati kamili)
+    ]
+  }
+};
+

@@ -1,0 +1,206 @@
+- Kuwashirikisha wananchi katika maendeleo.
+- Kuimarisha huduma za serikali za dijitali.
+'''
+  },
+  'miradi': {
+    'content': '''
+Miradi ya Maendeleo katika Mkoa wa Arusha (2025-2030): The following list includes a subset of projects for brevity. The full list of 248 projects is available in the official CCM Arusha Region Manifesto document.
+''',
+    'projects': [
+      {
+        'id': 1,
+        'name': 'Ujenzi wa miradi ya maji katika vijiji 7 vya Arumeru',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 2,
+        'name': 'Mradi wa Maji Embaseni-Ngardoto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 3,
+        'name': 'Ujenzi wa Mradi wa Maji Kilimatinde',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 4,
+        'name': 'Ukarabati wa Skimu ya Ngarenanyuki',
+        'sector': 'Maji',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 5,
+        'name': 'Ujenzi wa uwanja wa michezo Bondeni City',
+        'sector': 'Michezo',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 6,
+        'name': 'Ukarabati wa Ofisi 10 za kata na ukarabati wa jengo la utawala',
+        'sector': 'Utawala',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 7,
+        'name': 'Kujenga jengo la Kitivo cha Uhasibu na Fedha',
+        'sector': 'Elimu',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 8,
+        'name': 'Ukarabati wa Skimu ya Maji Manyire, Marurani, Maji moto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 9,
+        'name': 'Ujenzi wa Mradi wa Msitu wa Mbugoo',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 10,
+        'name': 'Ujenzi wa Mradi wa maji Ngurdoloto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 11,
+        'name': 'Ujenzi wa Mradi wa Maji Ngyani',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 12,
+        'name': 'Ujenzi wa Mradi wa Maji Kata ya Songoro',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      }
+      // ... (Orodha inaendelea kama ilivyotolewa kwenye hati kamili)
+    ]
+  }
+};</script>
+  <script>
+    // Render from embedded source (no fetch) with attractive formatting
+    (function(){
+      const full = document.getElementById('ilaniFullSource').textContent;
+
+      // Build a lightweight accordion from full text without altering words
+      const container = document.getElementById('ilaniContainerLocal');
+      if (!container) return;
+      const text = full;
+      const sections = [];
+      // top-level sections: allow closing brace with optional comma
+      const regex = /^\s*'([^']+)'\s*:\s*\{([\s\S]*?)^\s*\},?\s*$/gm;
+      let m;
+      while ((m = regex.exec(text)) !== null) {
+        const name = m[1];
+        const body = `'${name}': {` + m[2] + `\n},`;
+        sections.push({ name, body });
+      }
+
+      container.innerHTML = '';
+
+      // Controls: search + expand/collapse all
+      const controls = document.createElement('div');
+      controls.className = 'flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4';
+      controls.innerHTML = `
+        <div class="flex items-center gap-2">
+          <input id="ilaniSearch" type="search" placeholder="Tafuta ndani ya Ilani..." class="border rounded-lg px-3 py-2 w-72 max-w-full" />
+          <button id="ilaniClear" class="px-3 py-2 rounded border">Futa</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btnOpenAll" class="px-3 py-2 rounded border">Fungua Zote</button>
+          <button id="btnCloseAll" class="px-3 py-2 rounded border">Funga Zote</button>
+        </div>`;
+      container.appendChild(controls);
+
+      // TOC
+      const toc = document.createElement('div');
+      toc.className = 'flex flex-wrap gap-2 mb-4';
+      container.appendChild(toc);
+
+      const articlesWrap = document.createElement('div');
+      articlesWrap.className = 'space-y-4';
+      container.appendChild(articlesWrap);
+
+      // restore expanded state
+      const saved = JSON.parse(localStorage.getItem('ilaniExpanded') || 'null') || {};
+
+      sections.forEach((sec, i) => {
+        const open = i < 2; // open first two by default
+        const id = `ilani-sec-${sec.name}`;
+        const article = document.createElement('article');
+        article.className = 'bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-md transition-shadow';
+        article.id = id;
+
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left px-5 py-4 flex items-center justify-between gap-4 hover:bg-gray-100';
+        btn.setAttribute('aria-controls', id);
+        const isOpen = saved[id] !== undefined ? !!saved[id] : open;
+        btn.setAttribute('aria-expanded', String(isOpen));
+        btn.innerHTML = `<span class="font-semibold capitalize">${sec.name.replace(/_/g,' ')}</span>
+                         <span class="flex items-center gap-3 text-gray-500">
+                           <button type="button" data-copy="#${id}" class="copylink px-2 py-0.5 rounded border text-xs">Nakili Kiungo</button>
+                           <span>${isOpen ? '−' : '+'}</span>
+                         </span>`;
+
+        const panel = document.createElement('div');
+        panel.id = id;
+        panel.className = 'px-5 pb-6 ' + (isOpen ? '' : 'hidden');
+        // Decorative top border
+        const deco = document.createElement('div');
+        deco.className = 'h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-green-500 mb-4 rounded';
+        panel.appendChild(deco);
+
+        // Parse body blocks: content, achievements, promises, projects
+        const getBlock = (key) => {
+          const re = new RegExp("'"+key+"'\\s*:\\s*'''([\\s\\S]*?)'''", 'm');
+          const mm = re.exec(sec.body);
+          return mm ? mm[1].trim() : '';
+        };
+        const renderParagraphs = (txt) => {
+          if (!txt) return '';
+          return txt.split(/\n\n+/).map(p => `<p class=\"text-gray-700 leading-7 mb-3\">${p.replace(/\n/g,' ')}</p>`).join('');
+        };
+        const renderBullets = (txt) => {
+          if (!txt) return '';
+          const items = txt.split(/\n/).filter(l=>/^\s*-\s+/.test(l)).map(l=>l.replace(/^\s*-\s+/,''));
+          if (!items.length) return '';
+          return `<ul class=\"space-y-1\">${items.map(it=>`<li class=\"flex items-start gap-2\"><span class=\"text-green-600 mt-1\">✓</span><span class=\"text-gray-700\">${it}</span></li>`).join('')}</ul>`;
+        };
+        const renderProjects = (txt) => {
+          if (!txt) return '';
+          const listRe = /\{[\s\S]*?\}/g;
+          const rows = [];
+          let m;
+          while ((m = listRe.exec(txt)) !== null) {
+            const block = m[0];
+            const get = (k) => { const r = new RegExp("'"+k+"'\s*:\s*'([^']+)'",'m').exec(block); return r ? r[1] : ''; };
+            rows.push({ name: get('name'), sector: get('sector'), district: get('district') });
+          }
+          if (!rows.length) return '';
+          return `<div class=\"mt-4\"><div class=\"font-medium mb-2\">Miradi (muhtasari)</div><ul class=\"divide-y\">${rows.map(r=>`<li class=\"py-2\"><div class=\"font-medium\">${r.name}</div><div class=\"text-sm text-gray-500\">${r.sector} — ${r.district}</div></li>`).join('')}</ul></div>`;
+        };
+
+        const contentHTML = renderParagraphs(getBlock('content'));
+        const achHTML = renderBullets(getBlock('achievements'));
+        const proHTML = renderBullets(getBlock('promises'));
+        const projHTML = renderProjects((() => { const m=/\'projects\'\s*:\s*\[([\s\S]*?)\]/m.exec(sec.body); return m? m[1] : ''; })());
+
+        const wrap = document.createElement('div');
+        wrap.innerHTML = `
+          ${contentHTML}
+          ${(achHTML || proHTML) ? `<div class=\"grid md:grid-cols-2 gap-6 mt-2\">
+              ${achHTML ? `<div><div class=\"font-semibold mb-2\">Mafanikio</div>${achHTML}</div>` : ''}
+              ${proHTML ? `<div><div class=\"font-semibold mb-2\">Ahadi</div>${proHTML}</div>` : ''}
+            </div>` : ''}
+          ${projHTML}
+        `;
+        panel.appendChild(wrap);
+
+        btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';

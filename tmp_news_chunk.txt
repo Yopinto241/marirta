@@ -1,0 +1,82 @@
+  // News page
+  const newsList = document.getElementById('newsList');
+  if (newsList) {
+    if (!data) {
+      newsList.innerHTML = `<div class="text-red-600">Failed to load news.</div>`;
+    } else {
+      newsList.innerHTML = '';
+      data.news?.forEach(n => {
+        const title = lang === 'sw' ? n.title_sw : n.title_en;
+        const date = new Date(n.date).toLocaleDateString(
+          lang === 'sw' ? 'sw-TZ' : 'en-GB',
+          { day: '2-digit', month: 'short', year: 'numeric' }
+        );
+        newsList.innerHTML += `
+          <a href="${n.link}" class="block bg-gray-50 rounded-xl p-4 hover:bg-gray-100">
+            <div class="text-sm text-gray-500">${date}</div>
+            <div class="font-medium">${title}</div>
+          </a>`;
+      });
+    }
+  }
+
+  // Gallery page
+  const gallery = document.getElementById('galleryGrid');
+  if (gallery) {
+    if (!data) {
+      gallery.innerHTML = `<div class="text-red-600">Failed to load gallery.</div>`;
+    } else {
+      gallery.innerHTML = '';
+      data.gallery?.forEach(g => {
+        gallery.innerHTML += `
+          <img src="${g.img}" alt="${g.alt}" class="rounded-xl object-cover w-full h-64">`;
+      });
+    }
+  }
+
+  // Home: latest news (top 3)
+  const homeNews = document.getElementById('homeNewsList');
+  if (homeNews) {
+    if (!data) {
+      homeNews.innerHTML = `<div class="text-red-600">Failed to load news.</div>`;
+    } else {
+      homeNews.innerHTML = '';
+      data.news
+        ?.slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 3)
+        .forEach(n => {
+          const title = lang === 'sw' ? n.title_sw : n.title_en;
+          const date = new Date(n.date).toLocaleDateString(
+            lang === 'sw' ? 'sw-TZ' : 'en-GB',
+            { day: '2-digit', month: 'short', year: 'numeric' }
+          );
+          homeNews.innerHTML += `
+            <a href="${n.link}" class="block bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition opacity-0">
+              <div class="text-sm text-gray-500">${date}</div>
+              <div class="font-medium">${title}</div>
+            </a>`;
+        });
+      // simple reveal animation
+      Array.from(homeNews.children).forEach((el, i) => setTimeout(() => el.classList.remove('opacity-0'), 80 * i));
+    }
+  }
+
+  // Home: featured projects (top 3)
+  const homeProjects = document.getElementById('homeProjectsGrid');
+  if (homeProjects) {
+    const pages = ['project-empowerment.html','project-girls-clubs.html','project-youth-ict.html'];
+    homeProjects.innerHTML = '';
+    const cards = await Promise.all(pages.map(loadProjectMeta));
+    cards.forEach(p => {
+      const title = lang === 'sw' ? p.title_sw : p.title_en;
+      const desc = lang === 'sw' ? p.desc_sw : p.desc_en;
+      homeProjects.innerHTML += `
+        <a href="${p.url}" class="block bg-white rounded-2xl shadow overflow-hidden transition transform hover:-translate-y-1 hover:shadow-lg opacity-0">
+          <img src="${p.coverImg}" class="w-full h-40 object-cover" alt="${title}">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-1">${title}</h3>
+            <p class="text-gray-700 line-clamp-3">${desc}</p>
+          </div>
+        </a>`;
+    });

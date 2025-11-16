@@ -1,0 +1,36 @@
+      const container = document.getElementById('ilaniContainerLocal');
+      if (!container) return;
+      const text = full;
+      const sections = [];
+      // top-level sections: allow closing brace with optional comma
+      const regex = /^\s*'([^']+)'\s*:\s*\{([\s\S]*?)^\s*\},?\s*$/gm;
+      let m;
+      while ((m = regex.exec(text)) !== null) {
+        const name = m[1];
+        const body = `'${name}': {` + m[2] + `\n},`;
+        sections.push({ name, body });
+      }
+
+      container.innerHTML = '';
+
+      // Controls: search + expand/collapse all
+      const controls = document.createElement('div');
+      controls.className = 'flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4';
+      controls.innerHTML = `
+        <div class="flex items-center gap-2">
+          <input id="ilaniSearch" type="search" placeholder="Tafuta ndani ya Ilani..." class="border rounded-lg px-3 py-2 w-72 max-w-full" />
+          <button id="ilaniClear" class="px-3 py-2 rounded border">Futa</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btnOpenAll" class="px-3 py-2 rounded border">Fungua Zote</button>
+          <button id="btnCloseAll" class="px-3 py-2 rounded border">Funga Zote</button>
+        </div>`;
+      container.appendChild(controls);
+
+      // TOC
+      const toc = document.createElement('div');
+      toc.className = 'flex flex-wrap gap-2 mb-4';
+      container.appendChild(toc);
+
+      const articlesWrap = document.createElement('div');
+      articlesWrap.className = 'space-y-4';

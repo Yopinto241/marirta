@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="sw">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-lock="true">Ilani</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo.jpg">
+  <meta name="description" content="Ilani ya Arusha (2025-2030) — Utangulizi, Afya, Elimu, Maji, Kilimo, n.k.">
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Header -->
+  <header class="border-b bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.jpg" alt="Logo ya Ofisi ya Mbunge Mariam Rita" class="w-10 h-10 rounded-full object-cover">
+        <span id="brandTitle" class="text-lg font-semibold">Ofisi ya Mbunge Mariam Rita</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" data-nav class="text-gray-700 hover:text-blue-600" data-i18n="nav.home">Nyumbani</a>
+        <a href="about.html" data-nav class="text-gray-700 hover:text-blue-600" data-i18n="nav.about">Kuhusu Mbunge</a>
+        <a href="projects.html" data-nav class="text-gray-700 hover:text-blue-600" data-i18n="nav.projects">Miradi</a>
+        <a href="news.html" data-nav class="text-gray-700 hover:text-blue-600" data-i18n="nav.news">Habari</a>
+        <a href="gallery.html" data-nav class="text-gray-700 hover:text-blue-600" data-i18n="nav.gallery">Picha & Video</a>
+        <a href="ilani.html" data-nav class="text-blue-600 font-semibold" aria-current="page" data-i18n="nav.ilani">Ilani</a>
+        <a href="contact.html" data-nav class="text-gray-700 hover:text-blue-600" data-i18n="nav.contact">Wasiliana</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="btnSw" type="button" class="px-3 py-1 rounded border">SW</button>
+        <button id="btnEn" type="button" class="px-3 py-1 rounded border">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-3xl font-bold mb-2" data-i18n="ilani.title">Ilani ya Mkoa wa Arusha (2025-2030)</h1>
+        <p class="text-gray-700 mb-8" data-i18n="ilani.subtitle">Soma muhtasari wa mafanikio na ahadi katika sekta mbalimbali.</p>
+
+        <div id="ilaniContainerLocal" class="space-y-4"><!-- filled locally --></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600">
+      &copy; <span id="yearSpan"></span> <span data-i18n="site.title">Ofisi ya Mbunge Mariam Rita</span>. All rights reserved.
+    </div>
+    <script>document.getElementById('yearSpan').textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <script src="main.js"></script>
+  <!-- Embed the complete Ilani text locally (no fetch) -->
+  <script id="ilaniFullSource" type="text/plain">const Map<String, Map<String, dynamic>> ilaniContent = {
+  'utangulizi': {
+    'content': '''
+Ilani ya Chama Cha Mapinduzi ya Mkoa wa Arusha ni sehemu ya Ilani ya CCM ya Uchaguzi Mkuu wa mwaka 2025. Ilani hii ya Mkoa imeandaliwa kama sehemu ya utekelezaji wa maono ya Mwenyekiti wa Chama cha Mapinduzi, Dkt. Samia Suluhu Hassan, na maelekezo ya Mkutano Mkuu wa CCM, ya kuandaa Ilani ndogo kwa kila mkoa, sambamba na Ilani ya CCM ya Uchaguzi Mkuu wa Mwaka 2025, kwa kuzingatia mazingira ya mkoa husika.
+
+Mkoa wa Arusha una ukubwa wa kilometa za mraba 34,515.5 na umepakana na mikoa ya Manyara, Kilimanjaro, Simiyu na Mara. Kiutawala Mkoa una Wilaya 6 na Halmashauri 7, Tarafa 23, Kata 160, Vijiji 395, Mitaa 154 na Vitongoji 1,510. Kwa mujibu wa Sensa ya Watu na Makazi ya mwaka 2022, Mkoa wa Arusha una jumla ya watu 2,356,255 ambapo kati ya hao wanaume ni 1,125,616 na wanawake ni 1,230,639.
+
+Kichama, Mkoa wa Arusha una Wilaya 7, Kata 161, Matawi 756, na Mashina 9,806.
+
+Ilani ya Mkoa wa Arusha imeandaliwa katika sehemu kuu nne, ambazo ni: Utangulizi, Tathmini ya Utekelezaji wa Ilani ya CCM kwa Ajili ya Uchaguzi Mkuu wa Mwaka 2020, Ahadi na Maelekezo ya CCM katika Kipindi cha 2025-2030 na Miradi Itakayotekelezwa katika Kipindi cha 2025-2030.
+'''
+  },
+  'afya': {
+    'achievements': '''
+- Kuimarika na kuongezeka kwa upatikanaji wa dawa, vifaa, vifaa tiba na vitendanishi katika vituo vya kutolea huduma za afya kutoka asilimia 58 mwaka 2020 hadi asilimia 85 mwaka 2025.
+- Kujenga Hospitali 2 za Wilaya, ambazo ni Hospitali ya Jiji la Arusha na Karatu.
+- Kujenga na kuongeza vituo vya afya kutoka 58 mwaka 2020 hadi 66 mwaka 2025.
+- Kujenga na kuongeza zahanati kutoka 312 mwaka 2021 hadi 350 mwaka 2025.
+- Kukamilisha ukarabati mkubwa wa Hospitali ya Rufaa ya Mount Meru ikihusisha ujenzi wa majengo 4 ya huduma za dharura katika Hospitali hiyo na Hospitali za Wilaya za Meru, Karatu, Longido na Ngorongoro.
+- Kujenga na kuongeza idadi ya Vituo vya Afya vinavyotoa huduma za upasuaji kutoka 38 mwaka 2020 hadi 51 mwaka 2025.
+- Kujenga na kuongeza nyumba za watumishi wa afya kutoka 291 mwaka 2020 hadi 335 mwaka 2025.
+- Kuongeza magari ya wagonjwa kutoka 7 mwaka 2020 hadi magari 13 mwaka 2025.
+''',
+    'promises': '''
+- Kuongeza upatikanaji wa dawa hadi asilimia 100 kwa mwaka 2030.
+- Kujenga majengo ya dharura katika hospitali za wilaya kutoka 3 hadi 7.
+- Kupunguza vifo vya akina mama wakati wa uzazi hadi asilimia 0.
+- Kuimarisha huduma za lishe kwa watoto na wajawazito.
+- Kuongeza idadi ya zahanati na vituo vya afya.
+'''
+  },
+  'elimu': {
+    'achievements': '''
+- Kuongezeka kwa uandikishaji na udahili wa wanafunzi (Elimu ya Awali-67,143, elimu msingi-373,504 na elimu sekondari-163,542), ufaulu umeongezeka kutoka asilimia 89.7 mwaka 2020 hadi asilimia 91.94 mwaka 2025, pamoja na kupunguza umbali wa wanafunzi kufuata huduma ya elimu kutoka umbali wa wastani kilomita 8 hadi kilomita 2 mtawali.
+- Kuendelea kutekeleza Mpango wa Elimu bila Ada kuanzia elimu ya awali hadi kidato cha sita kwa kuongeza fedha za kugharamia mpango huo.
+- Kujenga Shule mpya 27 za Sekondari na Shule mpya 7 za Msingi.
+- Kujenga madarasa 843 ya shule za Msingi na Sekondari pamoja na kuongeza madarasa ya elimu ya awali kutoka madarasa 802 mwaka 2020 hadi madarasa 853 mwaka 2025.
+- Kujenga mabweni 60 na maabara 78 katika Shule za Sekondari.
+- Kuongezeka kwa idadi ya walimu wa sayansi walioajiriwa kutoka walimu 112 mwaka 2020 hadi walimu 314 mwaka 2025.
+- Kukamilika kwa ujenzi wa miundombinu ya vyuo vya kati ikiwemo:
+  - Jengo la ghorofa lenye madarasa 8, maabara 6, ofisi 26 na bweni la wasichana katika Chuo cha Ufundi Arusha.
+  - Miundombinu ya kujifunzia, kumbi pacha za mihadhara na hosteli ya wasichana katika Chuo cha Maendeleo ya Jamii Tengeru.
+  - Jengo la utawala, madarasa 4, ofisi 2, matundu ya vyoo 8, maktaba na chumba cha kompyuta katika Chuo cha Ualimu Ngorongoro.
+  - Kuendelea na ujenzi wa majengo 6 katika Chuo cha Ufundi VETA Samunge ambayo yamefikia wastani wa asilimia 90.
+''',
+    'promises': '''
+- Kuongeza shule za msingi hadi 611 na sekondari hadi 206.
+- Kuongeza madarasa ya msingi hadi 8,172 na sekondari hadi 9,007.
+- Kuongeza ufaulu hadi asilimia 96-100 kwa ngazi zote.
+- Kuongeza uandikishaji wa wanafunzi kwa ngazi zote.
+- Kuanzisha mpango wa chakula shuleni.
+'''
+  },
+  'maji': {
+    'achievements': '''
+- Kuimarika kwa huduma ya upatikanaji wa maji safi kwa wananchi kutoka asilimia 69.2 mwaka 2020 hadi asilimia 77.3 mwaka 2025.
+- Kuongezeka kwa uzalishaji wa maji katika jiji la Arusha kutoka lita milioni 60 mwaka 2020 hadi lita milioni 200 kwa siku mwaka 2025, na kuongezeka kwa muda wa upatikanaji wa huduma ya maji kutoka masaa 11 hadi 22 kwa siku kulikotokana na kukamilika kwa miradi mikubwa ya maji.
+- Kuongezeka kwa idadi ya vijiji vyenye huduma ya maji kutoka vijiji 304 mwaka 2020 hadi vijiji 351 mwaka 2025.
+- Kukamilika kwa miradi 72 na kuanza kutoa huduma ya maji kwa wananchi waishio katika vijiji 47 na kuendelea na utekelezaji wa miradi 75 iliyofikia wastani wa asilimia 62.
+- Kununua seti moja ya mtambo wa kuchimba visima na hivyo kuongeza kasi ya uchimbaji wa visima vya maji ambapo jumla ya visima 91 vimechimbwa. Pia, kununua seti moja ya mtambo wa ujenzi wa mabwawa.
+''',
+    'promises': '''
+- Kuongeza huduma za maji hadi asilimia 90 vijijini na asilimia 95 mjini.
+- Kuongeza uzalishaji wa maji vijijini hadi lita 70,722,945, mjini hadi lita milioni 200.
+- Kuchimba visima hadi 236.
+- Kuongeza mabwawa hadi 25.
+'''
+  },
+  'kilimo': {
+    'achievements': '''
+- Kuongezeka kwa tija ya uzalishaji wa mazao ya chakula kwa hekta kutoka tani 47.1 kwa hekta mwaka 2020 hadi tani 50.5 kwa hekta mwaka 2025 sambamba na kuongezeka kwa uzalishaji wa mazao hayo kutoka tani 402,174 hadi tani 450,021 mtawali.
+- Kuimarika upatikanaji wa pembejeo za kilimo kutoka asilimia 70 kwa mwaka 2020 hadi asilimia 84 mwaka 2025, kulikochangiwa na mbolea ya ruzuku ya Serikali.
+- Kuimarika huduma za ugani kwa kununua vitendea kazi ikiwemo pikipiki 214, vipima udongo 5 na vishikwambi 193 kwa ajili ya maafisa ugani.
+- Kuongezeka kwa wakulima wanaopata huduma za ugani (M-Kilimo) kutoka wakulima 83,333 mwaka 2020 hadi wakulima 102,281 mwaka 2025.
+''',
+    'promises': '''
+- Kuongeza mbegu bora hadi tani 2,377.4.
+- Kuongeza mbolea ya ruzuku hadi tani 25,512.3.
+- Kuongeza skimu za umwagiliaji hadi 156.
+- Kujenga masoko 15 na maghala 82 ya mazao.
+'''
+  },
+  'mifugo': {
+    'achievements': '''
+- Kuongezeka kwa dawa ya ruzuku kutoka lita 3,640 mwaka 2020 hadi lita 28,707 mwaka 2025.
+- Kujenga majosho 16 ya kuogeshea mifugo katika Halmashauri za Wilaya za Arusha, Karatu, Longido, Monduli na Ngorongoro.
+- Kuimarisha huduma za ugani kwa kuajiri maafisa ugani 255 pamoja na kugawa pikipiki 13.
+- Kuongezeka kwa mashamba darasa ya mfano kutoka mashamba 49 mwaka 2020 hadi 149 mwaka 2025.
+- Kutoa elimu ya ufugaji bora na hivyo kuongeza idadi ya wafugaji waliobadilika na kuanza kufuga kisasa kutoka wafugaji 21,535 mwaka 2020 hadi 30,327 mwaka 2025.
+- Kuongezeka kwa idadi ya viwanda vidogo vya kusindika mazao ya mifugo vilivyoanzishwa na sekta binafsi kutoka viwanda 31 mwaka 2020 hadi viwanda 117 mwaka 2025, viwanda vya kati kutoka 5 hadi 15, viwanda vikubwa kutoka 2 hadi 7, na hivyo kuongeza kiasi cha mazao ya mifugo kilichosindikwa kutoka tani 128.16 hadi tani 371.22 mtawali.
+- Kuongezeka kwa idadi ya wafugaji waliojiunga katika vyama vya ushirika kutoka wafugaji 1,791 mwaka 2020 hadi 6,768 mwaka 2025.
+''',
+    'promises': '''
+- Kutenga hekta 467,435 kwa ufugaji.
+- Kujenga majosho 30, machinjio hadi 12, minada hadi 62.
+- Kuongeza dawa na chanjo za mifugo hadi dozi 3,399,204.
+'''
+  },
+  'viwanda': {
+    'achievements': '''
+- Kuanzishwa kwa kiwanda kimoja kikubwa, viwanda vya kati 12, vidogo 309 na vidogo sana 1,014.
+- Kuongezeka kwa ajira za viwandani.
+- Kujenga soko la kimkakati la mpakani katika Halmashauri ya Wilaya ya Longido.
+- Kuongezeka kwa wafanyabiashara waliounganishwa na masoko ya ndani na nje ya nchi.
+''',
+    'promises': '''
+- Kuongeza maeneo ya viwanda hadi hekta 33,200.
+- Kujenga kongani 7 za viwanda.
+- Kuanzisha viwanda vya kimkakati (dawa, nyama, chuma, mbolea, sukari, mafuta ya kula).
+'''
+  },
+  'miundombinu': {
+    'achievements': '''
+- Kujenga madaraja 11 katika Wilaya za Arusha, Karatu, Monduli na Longido.
+- Kujenga makalavati 8 katika Wilaya za Karatu, Ngorongoro na Monduli.
+- Kujenga kwa kiwango cha lami barabara za:
+  - Wasso-Sale (km 49).
+  - Tpackers-Losinyai (km 1.05), kipande cha kuanzia Moshono Kona-Kiseriani hadi Relini.
+- Kusainiwa kwa mikataba ya ujenzi wa barabara za:
+  - Arusha-Kibaya-Kongwa (km 430).
+  - Tengeru-Usa River (km 11.3).
+- Kukamilika kwa upembuzi yakinifu na usanifu wa kina wa barabara za:
+  - Mto wa Mbu hadi Loliondo (km 164).
+  - Karatu-Mbulu-Hydom-Singida (km 190).
+  - Barabara ya Mto wa Mbu-Longido-Karatu (km 300).
+  - Longido-Oldonyolengai (km 98).
+  - Arusha-Kisongo (km 9.1) kuwa njia nne.
+  - Makutano ya Momela hadi Uwanja wa Ndege wa Kimataifa wa Kilimanjaro (KIA) (km 20.3) kuwa njia nne.
+- Kukamilika kwa upanuzi wa kiwanja cha ndege cha Arusha, ukijumuisha upanuzi wa jengo la abiria na ukarabati wa njia ya kuruka na kutua ndege kwa kiwango cha lami.
+- Kuendelea na utekelezaji wa mradi wa TACTIC katika jiji la Arusha unaohusu uboreshaji wa barabara ya urefu wa km 1.5 ya Oljoro, Engo Sheraton.
+''',
+    'promises': '''
+- Ujenzi wa barabara (Arusha-Kibaya-Kongwa km 430).
+- Upanuzi wa barabara za mjini.
+- Reli ya kisasa Tanga-Arusha-Musoma.
+- Kujenga barabara za lami km 35 na madaraja 8.
+'''
+  },
+  'nishati': {
+    'achievements': '''
+- Umeme umefikishwa asilimia 68.8 ya vitongoji.
+- Njia ya kilovoti 400 (Singida-Arusha-Namanga) imejengwa.
+- Mitungi 6,500 ya gesi yamesambazwa kwa nishati safi ya kupikia.
+''',
+    'promises': '''
+- Kuunganisha umeme vitongoji vyote.
+- Kuhimiza nishati safi ya kupikia kwa matumizi ya nishati mbadala.
+'''
+  },
+  'ardhi': {
+    'achievements': '''
+- Hati miliki za ardhi zimeongezeka kutoka 3,869 hadi 21,301.
+- Vijiji vyenye masijala za ardhi vimeongezeka kutoka 29 hadi 234.
+- Makazi yaliyorasimishwa yameongezeka kutoka 3,611 hadi 18,383.
+''',
+    'promises': '''
+- Kuongeza hati miliki za kielektroniki hadi 205,000.
+- Kuongeza vijiji vyenye mpango wa matumizi ya ardhi hadi 280.
+- Kupima ardhi hadi hekta 7,260.
+'''
+  },
+  'maliasili_utalii': {
+    'achievements': '''
+- Ajira za utalii zimeongezeka.
+- Ranchi 5 za wanyamapori zimeanzishwa.
+- Miti milioni 6.1 iliyopandwa.
+- Uzalishaji wa mazao ya misitu na nyuki umeongezeka kutoka asilimia 25 hadi 75.
+''',
+    'promises': '''
+- Kuongeza watalii hadi milioni 7.
+- Kujenga kituo cha mikutano cha kisasa.
+- Kuongeza maeneo ya hifadhi ya wanyamapori hadi 4.
+- Kuanzisha vituo 7 vya kuhifadhia asali.
+'''
+  },
+  'uwezeshaji_kiuchumi': {
+    'achievements': '''
+- Mikopo ya asilimia 10 kwa wanawake, vijana, na watu wenye ulemavu imeongezeka.
+- Miradi ya TASAF imeongezeka kutoka 15 hadi 413, na kaya zinazonufaika kutoka 4,663 hadi 29,000.
+''',
+    'promises': '''
+- Kuzalisha ajira kupitia viwanda vya kuongeza thamani.
+- Kuanzisha vyuo 7 vya ufundi.
+- Kuongeza mikopo hadi bilioni 20.
+- Kuimarisha miradi ya TASAF.
+'''
+  },
+  'michezo_sanaa': {
+    'achievements': '''
+- Vilabu vya michezo vimeongezeka hadi 99, viwanja 16 vimeboreshwa, na vikundi vya sanaa kutoka 54 hadi 90.
+- Uwanja wa mpira wa watazamaji 30,000 unajengwa (asilimia 42.23 umekamilika).
+''',
+    'promises': '''
+- Kujenga viwanja 7 vya michezo.
+- Kuanzisha vituo vya umahiri vya michezo.
+- Kujenga makumbusho ya kiutamaduni na kituo cha utafiti wa malikale.
+'''
+  },
+  'utawala_bora': {
+    'achievements': '''
+- Mahakama ya Afrika ya Haki za Binadamu inajengwa (TZS 61 bilioni).
+- Makosa ya dawa za kulevya yamepungua kutoka 260 hadi 185.
+- Matukio ya uvunjifu wa amani yamepungua kutoka 405 hadi 157.
+''',
+    'promises': '''
+- Kuimarisha usalama na ulinzi.
+- Kupunguza rushwa.
+- Kuwashirikisha wananchi katika maendeleo.
+- Kuimarisha huduma za serikali za dijitali.
+'''
+  },
+  'miradi': {
+    'content': '''
+Miradi ya Maendeleo katika Mkoa wa Arusha (2025-2030).
+''',
+    'projects': [
+      {
+        'id': 1,
+        'name': 'Ujenzi wa miradi ya maji katika vijiji 7 vya Arumeru',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 2,
+        'name': 'Mradi wa Maji Embaseni-Ngardoto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 3,
+        'name': 'Ujenzi wa Mradi wa Maji Kilimatinde',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 4,
+        'name': 'Ukarabati wa Skimu ya Ngarenanyuki',
+        'sector': 'Maji',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 5,
+        'name': 'Ujenzi wa uwanja wa michezo Bondeni City',
+        'sector': 'Michezo',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 6,
+        'name': 'Ukarabati wa Ofisi 10 za kata na ukarabati wa jengo la utawala',
+        'sector': 'Utawala',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 7,
+        'name': 'Kujenga jengo la Kitivo cha Uhasibu na Fedha',
+        'sector': 'Elimu',
+        'district': 'Arusha CC'
+      },
+      {
+        'id': 8,
+        'name': 'Ukarabati wa Skimu ya Maji Manyire, Marurani, Maji moto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 9,
+        'name': 'Ujenzi wa Mradi wa Msitu wa Mbugoo',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 10,
+        'name': 'Ujenzi wa Mradi wa maji Ngurdoloto',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 11,
+        'name': 'Ujenzi wa Mradi wa Maji Ngyani',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      {
+        'id': 12,
+        'name': 'Ujenzi wa Mradi wa Maji Kata ya Songoro',
+        'sector': 'Maji',
+        'district': 'Arumeru'
+      },
+      { 'id': 13, 'name': 'Ujenzi wa Mradi wa Maji Kisimiri juu', 'sector': 'Maji', 'district': 'Arumeru' },
+      { 'id': 14, 'name': 'Ujenzi wa jengo la Huduma Jumuishi (OPD Complex) katika Hospitali ya Rufaa ya Mkoa wa Arusha (Mt. Meru)', 'sector': 'Afya', 'district': 'Arusha' },
+      { 'id': 15, 'name': 'Kunaakana ukarabati wa barabara ya Tengeru – Moshi – Himo – Holili (km 83.5)', 'sector': 'Barabara', 'district': 'Arusha' },
+      { 'id': 16, 'name': 'Upanuzi wa barabara ya Arusha Mjini - Kisongo (km 8.8)', 'sector': 'Barabara', 'district': 'Arusha' },
+      { 'id': 17, 'name': 'Ujenzi wa barabara ya Arusha – Kibaya – Kongwa (km 430) kwa kiwango cha lami', 'sector': 'Barabara', 'district': 'Arusha' },
+      { 'id': 18, 'name': 'Ujenzi wa Mradi wa Maji Olorchorovus', 'sector': 'Maji', 'district': 'Arusha' },
+      { 'id': 19, 'name': 'Mradi wa kupeleka umeme kwenye vitongiji awamu ya pili A', 'sector': 'Nishati', 'district': 'Arusha' },
+      { 'id': 20, 'name': 'Mradi wa kupeleka umeme kwenye vitongiji awamu ya pili B', 'sector': 'Nishati', 'district': 'Arusha' },
+      { 'id': 21, 'name': 'Mradi wa kuunganisha wateja zaidi ya 60,000 katika mkoa wa Arusha', 'sector': 'Nishati', 'district': 'Arusha' },
+      { 'id': 22, 'name': 'Mradi wa kufunga majiko ya nishati safi wa kupikia kwenye taasisi za umma', 'sector': 'Nishati', 'district': 'Arusha' },
+      { 'id': 23, 'name': 'Upanuzi wa kiwanja cha ndege cha Arusha', 'sector': 'Uchukuzi', 'district': 'Arusha' },
+      { 'id': 24, 'name': 'Ujenzi wa nyumba za makazi kwa familia 70 – Kiwanda Na. 148 & 149 Kaloleni Arusha', 'sector': 'Ujenzi', 'district': 'Arusha' },
+      { 'id': 25, 'name': 'Ujenzi wa jengo la makazi na biashara lenye uwezo wa kuchukua familia 120 na sehemu za biashara – Kiwanda Na. 30, 31, 33 And 37 Block E, Sekei Simeo ni Arusha', 'sector': 'Ujenzi', 'district': 'Arusha' },
+      { 'id': 26, 'name': 'Ukarabati wa majengo 15 ya Utawala yanayojumuisha Ofisi ya Mkuu wa Mkoa, Ofisi za Wakuu wa Wilaya Arusha, Karatu, Monduli, Longido na Ngorongoro. Ukarabati wa Ofisi za Tarafa za Poli, Mto wa Mbu, Makuyuni, Eyasi, Endumet, Mbuguni, Sale, Ketumbeine, na Moshono.', 'sector': 'Utawala', 'district': 'Arusha, Karatu, Monduli, Longido, Ngorongoro' },
+      { 'id': 27, 'name': 'Ujenzi wa vituo 5 vya afya', 'sector': 'Afya', 'district': 'Arusha CC' },
+      { 'id': 28, 'name': 'Ukarimishaji ujenzi wa Hospitali ya Jiji la Arusha', 'sector': 'Afya', 'district': 'Arusha CC' },
+      { 'id': 29, 'name': 'Ujenzi wa barabara km 5 kwa kiwango cha lami', 'sector': 'Barabara', 'district': 'Arusha CC' },
+      { 'id': 30, 'name': 'Ujenzi kwa kiwango cha Lami barabara ya Mateves-AFCON km 3.37, Mateves-Bondeni City km 12.08 na Lendita km 3.4 na daraja.', 'sector': 'Barabara', 'district': 'Arusha CC' },
+      { 'id': 31, 'name': 'Ujenzi wa kituo cha biashara (stendi ndogo)', 'sector': 'Biashara', 'district': 'Arusha CC' },
+      { 'id': 32, 'name': 'Ujenzi wa kumbi 2 za mikutano', 'sector': 'Biashara', 'district': 'Arusha CC' },
+      { 'id': 33, 'name': 'Ujenzi wa masoko 5 mapya', 'sector': 'Biashara', 'district': 'Arusha CC' },
+      { 'id': 34, 'name': 'Ukarabati wa masoko 6', 'sector': 'Biashara', 'district': 'Arusha CC' },
+      { 'id': 35, 'name': 'Ujenzi wa Hotel ya nyota tano ndani ya Jiji la Arusha', 'sector': 'Biashara', 'district': 'Arusha CC' },
+      { 'id': 36, 'name': 'Ujenzi wa shule mpya 5 za msingi na ukamilishaji wa shule 3 za sekondari', 'sector': 'Elimu', 'district': 'Arusha CC' },
+      { 'id': 37, 'name': 'Ujenzi wa madarasa 280 ya shule za msingi na 296 za shule za sekondari', 'sector': 'Elimu', 'district': 'Arusha CC' },
+      { 'id': 38, 'name': 'Ujenzi wa mabweni 20 katika shule zilizopo Halmashauri ya Jiji la Arusha', 'sector': 'Elimu', 'district': 'Arusha CC' },
+      { 'id': 39, 'name': 'Ujenzi wa nyumba 12 za walimu wa shule za msingi na nyumba 10 za walimu wa shule za sekondari', 'sector': 'Elimu', 'district': 'Arusha CC' },
+      { 'id': 40, 'name': 'Ujenzi wa matundu ya vyoo 1,000 katika shule zilizopo', 'sector': 'Elimu', 'district': 'Arusha CC' },
+      { 'id': 41, 'name': 'Kukamilisha ujenzi wa jengo la mabweni lenye uwezo wa kuchukua wanafunzi 2,000', 'sector': 'Elimu', 'district': 'Arusha CC' },
+      { 'id': 42, 'name': 'Ukarabati wa skimu ya maji Ngaramtoni na Ngarenanyuki', 'sector': 'Maji', 'district': 'Arusha CC' },
+      { 'id': 43, 'name': 'Ujenzi wa uwanja wa michezo Bondeni City', 'sector': 'Michezo', 'district': 'Arusha CC' },
+      { 'id': 44, 'name': 'Ukarabati wa ofisi 10 za kata na ukarabati wa jengo la utawala', 'sector': 'Utawala', 'district': 'Arusha CC' },
+      { 'id': 45, 'name': 'Kujenga jengo la Kitivo cha Uhasibu na Fedha', 'sector': 'Elimu', 'district': 'Arusha CC' },
+      { 'id': 46, 'name': 'Kujenga jengo la Multipurpose Hall', 'sector': 'Elimu', 'district': 'Arusha CC' },
+      { 'id': 47, 'name': 'Ujenzi wa vituo 2 vya afya katika kata 2 na zahanati 7 katika vijiji 7', 'sector': 'Afya', 'district': 'Arusha DC' },
+      { 'id': 48, 'name': 'Ujenzi wa nyumba 5 za watumishi katika vituo 5 vya kutoa huduma za afya', 'sector': 'Afya', 'district': 'Arusha DC' },
+      { 'id': 49, 'name': 'Ujenzi wa maabara 3 katika vituo 3 vya kutoa huduma za afya', 'sector': 'Afya', 'district': 'Arusha DC' },
+      { 'id': 50, 'name': 'Ukarabati wa vituo 4 vya kutoa huduma za afya', 'sector': 'Afya', 'district': 'Arusha DC' },
+      { 'id': 51, 'name': 'Ukamilishaji wa maboma 8 katika vituo 8 vya kutoa huduma za afya', 'sector': 'Afya', 'district': 'Arusha DC' },
+      { 'id': 52, 'name': 'Ujenzi wa barabara ya Kiutu – Oltrumet Hospital kwa kiwango cha lami km 1', 'sector': 'Barabara', 'district': 'Arusha DC' },
+      { 'id': 53, 'name': 'Ujenzi wa barabara ya Malalau – Nduruma – Bwanani kwa kiwango cha lami km 1', 'sector': 'Barabara', 'district': 'Arusha DC' },
+      { 'id': 54, 'name': 'Ujenzi wa vyumba 390 vya madarasa katika shule za sekondari 37', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 55, 'name': 'Ujenzi wa vyumba 20 vya maabara katika shule za sekondari 10', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 56, 'name': 'Ujenzi wa matundu 1,112 vya vyoo kwa shule za sekondari 39 na msingi 20', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 57, 'name': 'Ujenzi wa vyumba 7 za walimu kwa shule 7 za sekondari', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 58, 'name': 'Ujenzi wa Majengo 5 ya Utawala katika shule 5 za Sekondari', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 59, 'name': 'Ujenzi wa Maktaba 3 kwa shule 3 za sekondari na vyumba 12 vya TEHAMA kwa shule 12 za sekondari', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 60, 'name': 'Ujenzi wa Mabwalo 7 katika shule 4 za sekondari na shule 3 za msingi', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 61, 'name': 'Ujenzi wa Mabweni 12 katika shule 6 za sekondari', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 62, 'name': 'Ukamilishaji wa maboma 46 katika shule 16 za sekondari na shule 30 za msingi', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 63, 'name': 'Ujenzi wa shule mpya 2 za sekondari katika kata 2', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 64, 'name': 'Ujenzi wa nyumba 5 za walimu katika shule 5 za msingi', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 65, 'name': 'Ukarabati wa shule 25 kongwe za msingi', 'sector': 'Elimu', 'district': 'Arusha DC' },
+      { 'id': 66, 'name': 'Ukarabati wa skimu ya maji Likamba', 'sector': 'Maji', 'district': 'Arusha DC' },
+      { 'id': 67, 'name': 'Ukarabati wa skimu ya Lovilukunyi', 'sector': 'Maji', 'district': 'Arusha DC' },
+      { 'id': 68, 'name': 'Ujenzi wa uzio katika minada 3 ya halmashauri', 'sector': 'Mifugo', 'district': 'Arusha DC' },
+      { 'id': 69, 'name': 'Ukarabati wa machinjio 2 na ujenzi wa vichinjio 2', 'sector': 'Mifugo', 'district': 'Arusha DC' },
+      { 'id': 70, 'name': 'Ujenzi wa vibanda 5 vya kuchanjia mifugo', 'sector': 'Mifugo', 'district': 'Arusha DC' },
+      { 'id': 71, 'name': 'Ukarabati wa majosho 2', 'sector': 'Mifugo', 'district': 'Arusha DC' },
+      { 'id': 72, 'name': 'Ujenzi wa Vivuko vya watembea kwa miguu 135 katika kata 27', 'sector': 'Ujenzi', 'district': 'Arusha DC' },
+      { 'id': 73, 'name': 'Matengenezo ya barabara za vitongoji 27 mita 200 kwa kila kitongoji katika kata 27', 'sector': 'Ujenzi', 'district': 'Arusha DC' },
+      { 'id': 74, 'name': 'Ujenzi wa Ofisi 3 za kata na 5 za vijiji', 'sector': 'Utawala', 'district': 'Arusha DC' },
+      { 'id': 75, 'name': 'Ukarabati wa Jengo la Utawala la Halmashauri na Ofisi 4 za vijiji na kata', 'sector': 'Utawala', 'district': 'Arusha DC' },
+      { 'id': 76, 'name': 'Ujenzi wa zahanati 5 na vituo 2 vya afya', 'sector': 'Afya', 'district': 'Karatu' },
+      { 'id': 77, 'name': 'Ujenzi wa vyoo vya kata 8', 'sector': 'Afya', 'district': 'Karatu' },
+      { 'id': 78, 'name': 'Ujenzi wa maabara moja katika kituo cha afya', 'sector': 'Afya', 'district': 'Karatu' },
+      { 'id': 79, 'name': 'Kujenga daraja 3 katika barabara ya Endabash - Manyara', 'sector': 'Barabara', 'district': 'Karatu' },
+      { 'id': 80, 'name': 'Ujenzi wa Mabweni 27 na ukarabati wa Mabweni 54 katika Shule za Sekondari', 'sector': 'Elimu', 'district': 'Karatu' },
+      { 'id': 81, 'name': 'Ujenzi wa madarasa 165 katika shule za msingi zilizopo katika Halmashauri ya Wilaya ya Karatu', 'sector': 'Elimu', 'district': 'Karatu' },
+      { 'id': 82, 'name': 'Ujenzi wa matundu 782 ya vyoo katika shule za msingi', 'sector': 'Elimu', 'district': 'Karatu' },
+      { 'id': 83, 'name': 'Ujenzi mpya wa nyumba 26 za walimu wa shule za msingi katika Halmashauri ya Wilaya ya Karatu', 'sector': 'Elimu', 'district': 'Karatu' },
+      { 'id': 84, 'name': 'Ujenzi wa madarasa 98 katika shule za Sekondari Halmashauri ya Wilaya ya Karatu', 'sector': 'Elimu', 'district': 'Karatu' },
+      { 'id': 100, 'name': 'Maboresho ya Mialo 1 ya samaki Ziwa Eyasi ilipo', 'sector': 'Uvuvi', 'district': 'Karatu' },
+      { 'id': 101, 'name': 'Ukamilishaji wa zahanati 2 na ujenzi wa zahanati mpya 3', 'sector': 'Afya', 'district': 'Longido' },
+      { 'id': 102, 'name': 'Ujenzi wa njia za watembea kwa miguu (walk ways), uzio pamoja na majengo 7 katika Hospitali ya Wilaya ya Longido (RCH, OPD, Wodi ya wanawake, wodi ya wanaume, wodi ya watoto, wodi ya wazee, DV9)', 'sector': 'Afya', 'district': 'Longido' },
+      { 'id': 103, 'name': 'Ujenzi wa vituo vinne (4) vya afya', 'sector': 'Afya', 'district': 'Longido' },
+      { 'id': 104, 'name': 'Ujenzi wa Barabara ya ARCO - DC Residence kwa kiwango cha lami km 0.5', 'sector': 'Barabara', 'district': 'Longido' },
+      { 'id': 105, 'name': 'Ujenzi wa barabara ya Sokoni - TANESCO kwa kiwango cha lami kilomita moja', 'sector': 'Barabara', 'district': 'Longido' },
+      { 'id': 106, 'name': 'Ujenzi wa barabara ya Hospitali ya Wilaya kwa kiwango cha lami km 0.5', 'sector': 'Barabara', 'district': 'Longido' },
+      { 'id': 107, 'name': 'Ujenzi wa mabweni 12 na madarasa 266 katika shule za msingi', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 108, 'name': 'Ujenzi wa nyumba 31 na ukarabati wa nyumba 18 za walimu katika shule za msingi', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 109, 'name': 'Ukamilishaji wa ujenzi wa shule 8 na ujenzi wa shule mpya 18 za msingi', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 110, 'name': 'Ununuzi wa vitanda 800 katika shule za Sekondari Wilayani Longido', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 111, 'name': 'Ukamilishaji wa ujenzi wa matundu ya vyoo 22 na ujenzi mpya wa matundu ya vyoo 250 pamoja na ukarabati wa vyoo 10 katika shule za msingi', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 112, 'name': 'Ujenzi wa bweni 1 na ukarabati wa mabweni 6 ya shule za msingi', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 113, 'name': 'Ujenzi wa madarasa 18 na ukarabati wa madarasa 22 ya shule za msingi', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 114, 'name': 'Ujenzi wa shule 16 za msingi Wilayani Longido', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 115, 'name': 'Ujenzi wa madarasa 12 na mabweni 8 katika shule za Sekondari', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 116, 'name': 'Ujenzi wa mablawo 12 katika Shule za Sekondari', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 117, 'name': 'Ujenzi wa Shule mpya 2 za Sekondari; na ujenzi wa madarasa mapya 88 na ukarabati wa madarasa 110 ya shule za Sekondari', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 118, 'name': 'Ujenzi wa majengo 6 ya utawala katika shule za sekondari', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 119, 'name': 'Ujenzi wa majengo 8 ya TEHAMA na ununuzi wa Kompyuta 500 za kujifunzia katika shule za Sekondari', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 120, 'name': 'Ujenzi wa matundu 160 ya vyoo shule za sekondari', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 121, 'name': 'Ujenzi wa nyumba 25 na ukarabati wa nyumba 26 za walimu katika Shule za Sekondari', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 122, 'name': 'Ununuzi wa vitanda 800 katika shule za Sekondari Wilayani Longido', 'sector': 'Elimu', 'district': 'Longido' },
+      { 'id': 123, 'name': 'Ujenzi wa Bwawa la Ngamuraki', 'sector': 'Maji', 'district': 'Longido' },
+      { 'id': 124, 'name': 'Ukarabati wa Skimu ya Irkaswa/Kamwanga', 'sector': 'Maji', 'district': 'Longido' },
+      { 'id': 125, 'name': 'Ujenzi wa mradi wa maji Lengolwa', 'sector': 'Maji', 'district': 'Longido' },
+      { 'id': 126, 'name': 'Upanuzi wa Skimu ya maji Losoto', 'sector': 'Maji', 'district': 'Longido' },
+      { 'id': 127, 'name': 'Upanuzi wa Skimu ya Maji Elangadabash', 'sector': 'Maji', 'district': 'Longido' },
+      { 'id': 128, 'name': 'Ukarabati wa Skimu ya Lumbwa na majosho 18 na ujenzi wa mabomba ya kuogeshea mifugo', 'sector': 'Mifugo', 'district': 'Longido' },
+      { 'id': 129, 'name': 'Ujenzi wa malambo 18 ya kunyweshea maji mifugo', 'sector': 'Mifugo', 'district': 'Longido' },
+      { 'id': 130, 'name': 'Ujenzi na ukarabati wa Ofisi za Kata 25', 'sector': 'Utawala', 'district': 'Longido' },
+      { 'id': 131, 'name': 'Ujenzi wa Ofisi za Vijiji 10', 'sector': 'Utawala', 'district': 'Longido' },
+      { 'id': 132, 'name': 'Ukamilishaji wa ujenzi wa zahanati 6 na ujenzi wa Vituo vipya 3 vya afya', 'sector': 'Afya', 'district': 'Meru' },
+      { 'id': 133, 'name': 'Ujenzi wa barabara ya Miji wa USA kwa kiwango cha lami km 2', 'sector': 'Barabara', 'district': 'Meru' },
+      { 'id': 134, 'name': 'Uboreshaji wa masoko 3 ya Halmashauri ya wilaya ya Meru', 'sector': 'Biashara', 'district': 'Meru' },
+      { 'id': 135, 'name': 'Umaliziaji wa maboma yaliyojengwa kwa nguvu za wananchi katika shule 12 za msingi', 'sector': 'Elimu', 'district': 'Meru' },
+      { 'id': 136, 'name': 'Ujenzi wa madarasa 75 ya shule za msingi', 'sector': 'Elimu', 'district': 'Meru' },
+      { 'id': 137, 'name': 'Ukamilishaji wa ujenzi wa Shule moja ya Sekondari ya Amali Valeska pamoja na Maabara 8 katika shule za Sekondari', 'sector': 'Elimu', 'district': 'Meru' },
+      { 'id': 138, 'name': 'Ujenzi wa mabweni 8 shule za sekondari', 'sector': 'Elimu', 'district': 'Meru' },
+      { 'id': 139, 'name': 'Ujenzi wa skimu 3 za umwagiliaji katika vijiji 4', 'sector': 'Kilimo', 'district': 'Meru' },
+      { 'id': 140, 'name': 'Ujenzi wa mradi wa maji Ngyeku', 'sector': 'Maji', 'district': 'Meru' },
+      { 'id': 141, 'name': 'Ukarabati wa Skimu ya Maji Nkoaranga', 'sector': 'Maji', 'district': 'Meru' },
+      { 'id': 142, 'name': 'Ujenzi wa Mradi wa maji Karao, Kimwat & Sinonik', 'sector': 'Maji', 'district': 'Meru' },
+      { 'id': 143, 'name': 'Ujenzi wa machinjio ya Kisasa', 'sector': 'Mifugo', 'district': 'Meru' },
+      { 'id': 144, 'name': 'Ukarabati wa barabara katika kata 26', 'sector': 'Utawala', 'district': 'Meru' },
+      { 'id': 145, 'name': 'Ujenzi wa ofisi 4 za kata na Ofisi 7 za Vijiji', 'sector': 'Utawala', 'district': 'Meru' },
+      { 'id': 146, 'name': 'Ujenzi wa stendi ya kimkakati Leganga (mradi wa kimkakati)', 'sector': 'Uwekezaji', 'district': 'Meru' },
+      { 'id': 147, 'name': 'Ujenzi wa ukumbi wa kisasa wa mikutano na shughuli mbalimbali', 'sector': 'Uwekezaji', 'district': 'Meru' },
+      { 'id': 148, 'name': 'Umaliziaji wa jengo la Huduma za Dharura katika hospitali ya Wilaya', 'sector': 'Afya', 'district': 'Monduli' },
+      { 'id': 149, 'name': 'Ujenzi wa Jengo la ICU, Dawa, Mama na Mtoto na Chumba cha kuhifadhia Maiti katika Hospitali ya Wilaya ya Monduli', 'sector': 'Afya', 'district': 'Monduli' },
+      { 'id': 150, 'name': 'Ujenzi wa nyumba 4 za watumishi katika Hospitali ya Wilaya ya Monduli na nyumba 10 katika zahanati', 'sector': 'Afya', 'district': 'Monduli' },
+      { 'id': 151, 'name': 'Ujenzi na ukamilishaji wa vituo 4 vya afya na zahanati 10', 'sector': 'Afya', 'district': 'Monduli' },
+      { 'id': 152, 'name': 'Ujenzi wa barabara sehemu ya Mto wa Mbu – Loliondo: Sehemu ya Sale Junction – Mto wa Mbu (km 164)', 'sector': 'Barabara', 'district': 'Monduli' },
+      { 'id': 153, 'name': 'Ujenzi wa daraja barabara ya Makuyuni - Lemooti', 'sector': 'Barabara', 'district': 'Monduli' },
+      { 'id': 154, 'name': 'Ujenzi wa Shule mpya 3 za Sekondari, mabweni 90 na matundu 15,000 ya vyoo katika Shule za Sekondari', 'sector': 'Elimu', 'district': 'Monduli' },
+      { 'id': 155, 'name': 'Ujenzi wa nyumba 300 za walimu wa Shule za Sekondari na nyumba 200 za walimu wa shule za msingi', 'sector': 'Elimu', 'district': 'Monduli' },
+      { 'id': 156, 'name': 'Ujenzi wa madarasa 100 vya Shule za Msingi Halmashauri ya Wilaya ya Monduli', 'sector': 'Elimu', 'district': 'Monduli' },
+      { 'id': 157, 'name': 'Ujenzi wa Shule mpya 5 za msingi na matundu 8,000 ya vyoo katika Shule za Msingi', 'sector': 'Elimu', 'district': 'Monduli' },
+      { 'id': 158, 'name': 'Ujenzi wa Skimu ya umwagiliaji Mto wa Mbu', 'sector': 'Kilimo', 'district': 'Monduli' },
+      { 'id': 159, 'name': 'Ujenzi wa Bwawa la Somineni', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 160, 'name': 'Ujenzi wa mradi wa maji Engutukoit', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 161, 'name': 'Ujenzi wa mradi wa maji Huduma', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 162, 'name': 'Ukarabati wa Skimu ya maji Mokitaiso', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 163, 'name': 'Ujenzi wa Bwawa la Loorela', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 164, 'name': 'Ujenzi wa Bwawa la Moita Bwanani', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 165, 'name': 'Ujenzi wa mradi wa majisafi wa Monduli-Engukii', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 166, 'name': 'Ujenzi wa Bwawa la Nanja', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 167, 'name': 'Ujenzi wa Mradi wa Maji Sanganano', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 168, 'name': 'Ujenzi wa Mradi wa Maji Tukusi', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 169, 'name': 'Ujenzi wa Bwawa la Eluai', 'sector': 'Maji', 'district': 'Monduli' },
+      { 'id': 170, 'name': 'Mradi wa uendelezaji wa kupunguza hewa ya Kaboni katika vijiji 40 Halmashauri ya Wilaya ya Monduli', 'sector': 'Maliasili', 'district': 'Monduli' },
+      { 'id': 171, 'name': 'Mradi wa kuzuia migongano ya binadamu na wanyamapori katika vijiji 27 Halmashauri ya Wilaya Monduli', 'sector': 'Maliasili', 'district': 'Monduli' },
+      { 'id': 172, 'name': 'Ujenzi wa Ofisi 18 za kata na 53 za vijiji', 'sector': 'Utawala', 'district': 'Monduli' },
+      { 'id': 173, 'name': 'Ukarabati wa nyumba 18 za Wakuu wa Idara na nyumba 20 za Maafisa Watendaji wa Kata katika Halmashauri ya Wilaya ya Monduli', 'sector': 'Utawala', 'district': 'Monduli' },
+      { 'id': 174, 'name': 'Ujenzi wa nyumba 11 za watumishi wa idara ya afya kwenye vituo vya kutolea huduma za Afya', 'sector': 'Afya', 'district': 'Ngorongoro' },
+      { 'id': 175, 'name': 'Ujenzi wa Majengo 3 ya wagonjwa wa nje (OPD) kwenye vijiji 3 hapa Wilayani', 'sector': 'Afya', 'district': 'Ngorongoro' },
+      { 'id': 176, 'name': 'Ujenzi wa Maabara 5 katika vituo vya afya', 'sector': 'Afya', 'district': 'Ngorongoro' },
+      { 'id': 177, 'name': 'Ujenzi wa vichomea taka 7 kwenye vituo vya kutolea huduma za afya', 'sector': 'Afya', 'district': 'Ngorongoro' },
+      { 'id': 178, 'name': 'Ujenzi wa Majengo 21 katika Hospitali ya Wilaya pamoja na kuzunguka Hospitali ya Wilaya', 'sector': 'Afya', 'district': 'Ngorongoro' },
+      { 'id': 179, 'name': 'Ujenzi wa nyumba 20 za watumishi katika Hospitali ya Wilaya', 'sector': 'Afya', 'district': 'Ngorongoro' },
+      { 'id': 180, 'name': 'Ujenzi wa barabara za mji wa Wasso/Loliondo kwa kiwango cha tabaka la zege, ujenzi wa mitaro ya kwa zege na maandalizi kwa uwekaji wa taa za barabarani km 0.9', 'sector': 'Barabara', 'district': 'Ngorongoro' },
+      { 'id': 181, 'name': 'Ujenzi wa madarasa 45 shule za msingi na 25 sekondari Halmashauri ya Ngorongoro', 'sector': 'Elimu', 'district': 'Ngorongoro' },
+      { 'id': 182, 'name': 'Ujenzi wa Nyumba 12 za walimu shule za msingi na 10 sekondari Halmashauri ya Ngorongoro', 'sector': 'Elimu', 'district': 'Ngorongoro' },
+      { 'id': 183, 'name': 'Ujenzi wa mabwalo 3 ya shule za msingi na mabwalo 10 ya shule za Sekondari', 'sector': 'Elimu', 'district': 'Ngorongoro' },
+      { 'id': 184, 'name': 'Ujenzi wa Mabweni 5 ya shule za Msingi na Mabweni 20 ya shule za Sekondari', 'sector': 'Elimu', 'district': 'Ngorongoro' },
+      { 'id': 185, 'name': 'Ujenzi wa shule 3 mpya za Msingi na shule 5 mpya za Sekondari', 'sector': 'Elimu', 'district': 'Ngorongoro' },
+      { 'id': 186, 'name': 'Ujenzi wa matundu ya vyoo 175 katika shule za msingi na matundu 150 ya vyoo katika Sekondari', 'sector': 'Elimu', 'district': 'Ngorongoro' },
+      { 'id': 187, 'name': 'Ujenzi wa maabara 6 za Sekondari', 'sector': 'Elimu', 'district': 'Ngorongoro' },
+      { 'id': 188, 'name': 'Ujenzi wa ICT rooms 6 kwa shule za sekondari', 'sector': 'Elimu', 'district': 'Ngorongoro' },
+      { 'id': 189, 'name': 'Ujenzi wa mifereji 8 ya umwagiliaji wa chakula kwenye kata', 'sector': 'Kilimo', 'district': 'Ngorongoro' },
+      { 'id': 190, 'name': 'Ujenzi wa maghala 7 ya kuhifadhia chakula kwenye kata', 'sector': 'Kilimo', 'district': 'Ngorongoro' },
+      { 'id': 191, 'name': 'Upanuzi wa Skimu ya Maji Engarasero', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 192, 'name': 'Upanuzi wa Skimu ya maji Jema', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 193, 'name': 'Ukarabati na Upanuzi wa Skimu ya Maji Malambo', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 194, 'name': 'Upanuzi wa Skimu ya maji Mondorosi', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 195, 'name': 'Mradi wa Maji Mageri Ngorongoro', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 196, 'name': 'Ujenzi wa mradi wa majisafi katika mji wa Oldonyosambu', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 197, 'name': 'Upanuzi wa Skimu ya maji Katerogani', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 198, 'name': 'Ujenzi wa mradi wa maji Sero', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 199, 'name': 'Ukarabati na Upanuzi wa Skimu ya maji Ololosikwan', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 200, 'name': 'Uchimbaji wa Visima virefu 8', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 201, 'name': 'Upanuzi wa Skimu ya Maji Piyaya', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 202, 'name': 'Ujenzi wa Mradi wa maji Sakila juu', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 203, 'name': 'Ukarabati na Upanuzi wa Skimu ya maji Sale', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 204, 'name': 'Ukarabati na Upanuzi wa Skimu ya maji Masusu', 'sector': 'Maji', 'district': 'Ngorongoro' },
+      { 'id': 205, 'name': 'Ujenzi wa majosho 25 na machinjio 15 ya mifugo kwenye kata na vijiji', 'sector': 'Mifugo', 'district': 'Ngorongoro' },
+      { 'id': 206, 'name': 'Ujenzi wa minundo ya vyoo matundu 95 kwenye minada katika kata', 'sector': 'Mifugo', 'district': 'Ngorongoro' },
+      { 'id': 207, 'name': 'Kujenga uzio eneo la minada 19 katika Kata za Wilaya ya Ngorongoro', 'sector': 'Mifugo', 'district': 'Ngorongoro' },
+      { 'id': 208, 'name': 'Ujenzi wa Mabwawa 20 katika kata', 'sector': 'Mifugo', 'district': 'Ngorongoro' },
+      { 'id': 209, 'name': 'Ujenzi wa Vibanda (crash) 30 kwenye kata na vijiji', 'sector': 'Mifugo', 'district': 'Ngorongoro' },
+      { 'id': 210, 'name': 'Ujenzi wa barabara 5 na vivuko Tarafa ya Sale na Lolindo', 'sector': 'Ujenzi', 'district': 'Ngorongoro' },
+      { 'id': 211, 'name': 'Ujenzi wa Ofisi 12 za kata na ofisi 18 za vijiji', 'sector': 'Utawala', 'district': 'Ngorongoro' },
+      { 'id': 212, 'name': 'Ujenzi wa Ofisi 12 za kata na ofisi 18 za vijiji', 'sector': 'Utawala', 'district': 'Ngorongoro' }
+    ]
+  }
+};</script>
+  <script>
+    // Render from embedded source (no fetch) with attractive formatting
+    (function(){
+      const full = document.getElementById('ilaniFullSource').textContent;
+
+      // Build a lightweight accordion from full text without altering words
+      const container = document.getElementById('ilaniContainerLocal');
+      if (!container) return;
+      const text = full;
+      // Robust top-level parser: find each section header and slice until next header
+      const sections = [];
+      const headerRe = /^\s*'([^']+)'\s*:\s*\{/gm;
+      const headers = [];
+      let hm;
+      while ((hm = headerRe.exec(text)) !== null) {
+        headers.push({ name: hm[1], pos: hm.index });
+      }
+      for (let i = 0; i < headers.length; i++) {
+        const start = headers[i].pos;
+        const end = i + 1 < headers.length ? headers[i + 1].pos : text.length;
+        const chunk = text.slice(start, end);
+        sections.push({ name: headers[i].name, body: chunk });
+      }
+
+      container.innerHTML = '';
+
+      // Controls: search + expand/collapse all
+      const controls = document.createElement('div');
+      controls.className = 'flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4';
+      controls.innerHTML = `
+        <div class="flex items-center gap-2">
+          <input id="ilaniSearch" type="search" placeholder="Tafuta ndani ya Ilani..." class="border rounded-lg px-3 py-2 w-72 max-w-full" />
+          <button id="ilaniClear" class="px-3 py-2 rounded border">Futa</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btnOpenAll" class="px-3 py-2 rounded border">Fungua Zote</button>
+          <button id="btnCloseAll" class="px-3 py-2 rounded border">Funga Zote</button>
+        </div>`;
+      container.appendChild(controls);
+
+      // TOC
+      const toc = document.createElement('div');
+      toc.className = 'flex flex-wrap gap-2 mb-4';
+      container.appendChild(toc);
+
+      const articlesWrap = document.createElement('div');
+      articlesWrap.className = 'space-y-4';
+      container.appendChild(articlesWrap);
+
+      // restore expanded state
+      const saved = JSON.parse(localStorage.getItem('ilaniExpanded') || 'null') || {};
+
+      sections.forEach((sec, i) => {
+        const open = i < 2; // open first two by default
+        const id = `ilani-sec-${sec.name}`;
+        const article = document.createElement('article');
+        article.className = 'bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-md transition-shadow';
+        article.id = id;
+
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left px-5 py-4 flex items-center justify-between gap-4 hover:bg-gray-100';
+        btn.setAttribute('aria-controls', id);
+        const isOpen = saved[id] !== undefined ? !!saved[id] : open;
+        btn.setAttribute('aria-expanded', String(isOpen));
+        btn.innerHTML = `<span class="font-semibold capitalize">${sec.name.replace(/_/g,' ')}</span>
+                         <span class="flex items-center gap-3 text-gray-500">
+                           <button type="button" data-copy="#${id}" class="copylink px-2 py-0.5 rounded border text-xs">Nakili Kiungo</button>
+                           <span>${isOpen ? '&minus;' : '+'}</span>
+                         </span>`;
+
+        const panel = document.createElement('div');
+        panel.id = id;
+        panel.className = 'px-5 pb-6 ' + (isOpen ? '' : 'hidden');
+        // Decorative top border
+        const deco = document.createElement('div');
+        deco.className = 'h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-green-500 mb-4 rounded';
+        panel.appendChild(deco);
+
+        // Parse body blocks: content, achievements, promises, projects
+        const getBlock = (key) => {
+          const re = new RegExp("'"+key+"'\\s*:\\s*'''([\\s\\S]*?)'''", 'm');
+          const mm = re.exec(sec.body);
+          return mm ? mm[1].trim() : '';
+        };
+        const renderParagraphs = (txt) => {
+          if (!txt) return '';
+          return txt.split(/\n\n+/).map(p => `<p class=\"text-gray-700 leading-7 mb-3\">${p.replace(/\n/g,' ')}</p>`).join('');
+        };
+        const renderBullets = (txt) => {
+          if (!txt) return '';
+          const items = txt.split(/\n/).filter(l=>/^\s*-\s+/.test(l)).map(l=>l.replace(/^\s*-\s+/,''));
+          if (!items.length) return '';
+          return `<ul class=\"space-y-1\">${items.map(it=>`<li class=\"flex items-start gap-2\"><span class=\"text-green-600 mt-1\">&#10003;</span><span class=\"text-gray-700\">${it}</span></li>`).join('')}</ul>`;
+        };
+        const renderProjects = (txt) => {
+          if (!txt) return '';
+          const listRe = /\{[\s\S]*?\}/g;
+          const rows = [];
+          let m;
+          while ((m = listRe.exec(txt)) !== null) {
+            const block = m[0];
+            const get = (k) => { const r = new RegExp("'"+k+"'\s*:\s*'([^']+)'",'m').exec(block); return r ? r[1] : ''; };
+            rows.push({ name: get('name'), sector: get('sector'), district: get('district') });
+          }
+          if (!rows.length) return '';
+          return `<div class=\"mt-4\"><div class=\"font-medium mb-2\">Miradi (muhtasari)</div><ul class=\"divide-y\">${rows.map(r=>`<li class=\"py-2\"><div class=\"font-medium\">${r.name}</div><div class=\"text-sm text-gray-500\">${r.sector} &mdash; ${r.district}</div></li>`).join('')}</ul></div>`;
+        };
+
+        // Enhanced projects renderer (cards + filters)
+        function renderProjectsGrid(txt) {
+          if (!txt) return '';
+          const listRe = /\{[\s\S]*?\}/g;
+          const projects = [];
+          let mm;
+          while ((mm = listRe.exec(txt)) !== null) {
+            const block = mm[0];
+            const getS = (k) => { const r = new RegExp("'"+k+"'\\s*:\\s*'([^']+)'",'m').exec(block); return r ? r[1] : ''; };
+            const getN = (k) => { const r = new RegExp("'"+k+"'\\s*:\\s*([0-9]+)",'m').exec(block); return r ? parseInt(r[1],10) : NaN; };
+            const id = getN('id');
+            const name = getS('name');
+            const sector = getS('sector');
+            const district = getS('district');
+            if (name) projects.push({ id, name, sector, district });
+          }
+          if (!projects.length) return '';
+          projects.sort((a,b) => (isNaN(a.id)?0:a.id) - (isNaN(b.id)?0:b.id));
+          const total = projects.length;
+          const sectors = Array.from(new Set(projects.map(p=>p.sector).filter(Boolean))).sort();
+          const districts = Array.from(new Set(projects.map(p=>p.district).filter(Boolean))).sort();
+          const filterBar = `
+            <div class=\"flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-3\">
+              <div class=\"text-sm text-gray-600\">Jumla: <span class=\"font-semibold\">${total}</span> miradi</div>
+              <div class=\"flex flex-wrap items-center gap-2\">
+                <select id=\"miradiSector\" class=\"border rounded-lg px-3 py-2 text-sm\">
+                  <option value=\"\">Sekta zote</option>
+                  ${sectors.map(s=>`<option value=\"${s}\">${s}</option>`).join('')}
+                </select>
+                <select id=\"miradiDistrict\" class=\"border rounded-lg px-3 py-2 text-sm\">
+                  <option value=\"\">Maeneo yote</option>
+                  ${districts.map(d=>`<option value=\"${d}\">${d}</option>`).join('')}
+                </select>
+                <input id=\"miradiSearch\" type=\"search\" placeholder=\"Tafuta miradi...\" class=\"border rounded-lg px-3 py-2 text-sm\" />
+              </div>
+            </div>`;
+          const cards = projects.map(p => `
+            <div class=\"miradi-card bg-white rounded-xl shadow-sm ring-1 ring-black/5 hover:shadow-lg transition p-4\" data-sector=\"${p.sector}\" data-district=\"${p.district}\" data-name=\"${p.name.replace(/\\"/g,'&quot;')}\"> 
+              <div class=\"flex items-center justify-between mb-1\">
+                <span class=\"text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 ring-1 ring-blue-200\">#${isNaN(p.id)?'':p.id}</span>
+                <span class=\"text-xs px-2 py-0.5 rounded-full bg-gray-50 text-gray-700 ring-1 ring-gray-200\">${p.sector || '—'}</span>
+              </div>
+              <div class=\"font-medium leading-6\">${p.name}</div>
+              <div class=\"text-sm text-gray-600 mt-1\">${p.district || ''}</div>
+            </div>`).join('');
+          return `
+            <div class=\"mt-4\">
+              ${filterBar}
+              <div id=\"miradiGrid\" class=\"grid sm:grid-cols-2 lg:grid-cols-3 gap-3\">${cards}</div>
+            </div>`;
+        }
+
+        const contentHTML = renderParagraphs(getBlock('content'));
+        const achHTML = renderBullets(getBlock('achievements'));
+        const proHTML = renderBullets(getBlock('promises'));
+        const projHTML = renderProjectsGrid((() => { const m=/\'projects\'\s*:\s*\[([\s\S]*?)\]/m.exec(sec.body); return m? m[1] : ''; })());
+
+        const wrap = document.createElement('div');
+        wrap.innerHTML = `
+          ${contentHTML}
+          ${(achHTML || proHTML) ? `<div class=\"grid md:grid-cols-2 gap-6 mt-2\">
+              ${achHTML ? `<div><div class=\"font-semibold mb-2\">Mafanikio</div>${achHTML}</div>` : ''}
+              ${proHTML ? `<div><div class=\"font-semibold mb-2\">Ahadi</div>${proHTML}</div>` : ''}
+            </div>` : ''}
+          ${projHTML}
+        `;
+        panel.appendChild(wrap);
+
+        btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          btn.querySelector('span span:last-child').textContent = expanded ? '+' : '−';
+          panel.classList.toggle('hidden');
+          const map = JSON.parse(localStorage.getItem('ilaniExpanded') || '{}');
+          map[id] = !expanded;
+          localStorage.setItem('ilaniExpanded', JSON.stringify(map));
+        });
+
+        article.appendChild(btn);
+        article.appendChild(panel);
+        articlesWrap.appendChild(article);
+
+        // TOC chip
+        const chip = document.createElement('a');
+        chip.href = `#${id}`;
+        chip.className = 'px-3 py-1 rounded-full border text-sm hover:bg-gray-100';
+        chip.textContent = sec.name.replace(/_/g,' ');
+        chip.addEventListener('click', (e) => {
+          // ensure open and smooth scroll
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          if (!expanded) btn.click();
+          setTimeout(()=> document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+        });
+        toc.appendChild(chip);
+      });
+
+      // Wire copy link buttons
+      container.querySelectorAll('.copylink').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const target = btn.getAttribute('data-copy');
+          const url = location.origin + location.pathname + target;
+          navigator.clipboard.writeText(url);
+          btn.textContent = 'Imenakiliwa';
+          setTimeout(()=> btn.textContent = 'Nakili Kiungo', 1200);
+        });
+      });
+
+      // Hook up controls
+      const btnOpenAll = document.getElementById('btnOpenAll');
+      const btnCloseAll = document.getElementById('btnCloseAll');
+      btnOpenAll.onclick = () => container.querySelectorAll('button[aria-controls]').forEach(b=>{ b.setAttribute('aria-expanded','true'); b.nextElementSibling.classList.remove('hidden'); b.querySelector('span span:last-child').textContent='−';});
+      btnCloseAll.onclick = () => container.querySelectorAll('button[aria-controls]').forEach(b=>{ b.setAttribute('aria-expanded','false'); b.nextElementSibling.classList.add('hidden'); b.querySelector('span span:last-child').textContent='+';});
+
+      const search = document.getElementById('ilaniSearch');
+      const clear = document.getElementById('ilaniClear');
+      const filter = () => {
+        const q = (search.value || '').toLowerCase().trim();
+        const arts = articlesWrap.querySelectorAll('article');
+        arts.forEach(a => {
+          const txt = a.textContent.toLowerCase();
+          const match = !q || txt.includes(q);
+          a.style.display = match ? '' : 'none';
+          if (match && q) { // ensure opened
+            const btn = a.querySelector('button[aria-controls]');
+            if (btn && btn.getAttribute('aria-expanded') !== 'true') btn.click();
+          }
+        });
+      };
+      search.addEventListener('input', filter);
+      clear.addEventListener('click', () => { search.value=''; filter(); });
+
+      // Open deep link section if hash present
+      if (location.hash) {
+        const target = document.querySelector(location.hash);
+        if (target) {
+          const btn = target.parentElement.querySelector('button[aria-controls]');
+          if (btn && btn.getAttribute('aria-expanded') !== 'true') btn.click();
+          setTimeout(()=> target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
